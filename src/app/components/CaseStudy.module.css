@@ -1,0 +1,167 @@
+.caseStudy {
+  min-height: 100vh;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+  position: relative;
+  z-index: 10;
+}
+
+.hero {
+  padding: var(--space-12) 0 var(--space-8);
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  color: var(--mc-text-yellow);
+  text-shadow: 4px 4px 0 #3f3f00;
+  margin-bottom: var(--space-4);
+  line-height: 1.05;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: var(--mc-text-light);
+  text-shadow: 2px 2px 0 #000;
+  margin: 0 auto var(--space-6);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Grid System */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+/* Grid Spans */
+.span12 { grid-column: span 12; }
+.span8 { grid-column: span 12; }
+.span4 { grid-column: span 12; }
+.span6 { grid-column: span 12; }
+
+@media (min-width: 1024px) {
+  .span8 { grid-column: span 8; }
+  .span4 { grid-column: span 4; }
+  .span6 { grid-column: span 6; }
+}
+
+/* Minecraft UI Panel (Overrides Bento Card) */
+:global(.bento-card) {
+  background-color: var(--mc-ui-bg);
+  border: 4px solid var(--mc-border-darker);
+  box-shadow: 
+    inset 4px 4px 0px 0px var(--mc-border-light),
+    inset -4px -4px 0px 0px var(--mc-border-dark),
+    8px 8px 0px 0px rgba(0,0,0,0.5);
+  padding: var(--space-4);
+  color: var(--mc-text-dark);
+  transition: transform 0.1s;
+}
+
+:global(.bento-card:hover) {
+  transform: translateY(-4px);
+}
+
+/* Block Content */
+.blockTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--mc-text-dark);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.blockText {
+  font-size: 1.25rem;
+  color: var(--mc-text-dark);
+  line-height: 1.4;
+}
+
+/* Highlights */
+.highlightBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--mc-bg);
+  color: var(--mc-text-light);
+  border: 2px solid var(--mc-border-darker);
+  box-shadow: 
+    inset 2px 2px 0px 0px var(--mc-border-dark),
+    inset -2px -2px 0px 0px #000;
+  text-shadow: 2px 2px 0 #000;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-3);
+}
+
+.highlightBadge.warning {
+  color: var(--mc-text-yellow);
+}
+
+.highlightBadge.success {
+  color: var(--mc-text-green);
+}
+
+/* Code block inside */
+.codeBlock {
+  background-color: #000;
+  border: 4px solid var(--mc-border-darker);
+  box-shadow: 
+    inset 4px 4px 0px 0px var(--mc-border-dark),
+    inset -4px -4px 0px 0px var(--mc-border-light);
+  padding: var(--space-3);
+  font-family: var(--font-pixel);
+  font-size: 1.25rem;
+  color: var(--mc-text-light);
+  overflow-x: auto;
+  margin-top: var(--space-4);
+}
+
+.codeComment { color: var(--mc-border-dark); }
+.codeKeyword { color: var(--mc-text-green); }
+.codeString { color: var(--mc-text-yellow); }
+
+/* Data Table */
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-4);
+  background: var(--mc-border-light);
+  border: 4px solid var(--mc-border-darker);
+}
+
+.dataTable th, .dataTable td {
+  padding: var(--space-2);
+  border: 4px solid var(--mc-border-darker);
+  text-align: left;
+}
+
+.dataTable th {
+  background: var(--mc-bg);
+  color: var(--mc-text-yellow);
+  text-shadow: 2px 2px 0 #000;
+  font-size: 1.5rem;
+}
+
+.dataTable td {
+  color: var(--mc-text-dark);
+  font-size: 1.25rem;
+}
+
+/* Section Dividers */
+.sectionHeader {
+  margin: var(--space-12) 0 var(--space-6);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--mc-text-light);
+  text-shadow: 4px 4px 0 #000;
+  border-bottom: 4px solid var(--mc-bg);
+  padding-bottom: var(--space-2);
+}

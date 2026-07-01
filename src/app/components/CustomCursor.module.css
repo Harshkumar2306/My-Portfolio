@@ -1,0 +1,31 @@
+.cursor {
+  position: fixed;
+  pointer-events: none; /* Crucial: lets clicks pass through */
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%); /* Center on mouse */
+  transition: transform 0.1s;
+}
+
+/* Base Minecraft Crosshair */
+.crosshair {
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="0" width="4" height="32" fill="white" stroke="black" stroke-width="2"/><rect x="0" y="14" width="32" height="4" fill="white" stroke="black" stroke-width="2"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Hover Pickaxe */
+.pickaxe {
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 28L14 18M18 14L28 4M10 10L14 14M22 22L18 18" stroke="%238B5A2B" stroke-width="4"/><path d="M12 6L26 6L26 20L18 12L12 6Z" fill="%2355FFFF" stroke="black" stroke-width="2"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-20%, -20%) rotate(-15deg); /* Adjust hotspot and tilt */
+}
+
+/* Ensure global cursor hiding is respected on all child elements */
+:global(*) {
+  cursor: none !important;
+}

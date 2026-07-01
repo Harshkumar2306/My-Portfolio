@@ -1,0 +1,64 @@
+.inventoryWrapper {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hotbar {
+  display: flex;
+  background-color: var(--mc-ui-bg);
+  border: 4px solid var(--mc-border-darker);
+  padding: 4px;
+}
+
+.slot {
+  width: 64px;
+  height: 64px;
+  background-color: #8b8b8b;
+  border: 4px solid var(--mc-border-dark);
+  box-shadow: 
+    inset 4px 4px 0px var(--mc-border-darker),
+    inset -4px -4px 0px var(--mc-border-light);
+  margin-right: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.slot:last-child {
+  margin-right: 0;
+}
+
+.slot:hover {
+  background-color: #a0a0a0;
+}
+
+/* Simulate the "selected" slot by overriding borders */
+.slot:first-child {
+  border: 4px solid #ffffff;
+  box-shadow: none;
+}
+
+.icon {
+  font-size: 32px;
+}
+
+.number {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-family: var(--font-pixel);
+  color: var(--mc-text-light);
+  font-size: 20px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.label {
+  margin-top: 8px;
+  color: var(--mc-text-dark);
+  font-size: 1.25rem;
+}

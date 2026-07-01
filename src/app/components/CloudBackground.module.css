@@ -1,0 +1,32 @@
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cloudContainer {
+  position: absolute;
+  left: -200px; /* Start offscreen */
+  animation: floatCloud linear infinite;
+}
+
+.cloudPart {
+  position: absolute;
+  background-color: #ffffff;
+  /* Add slight shadow to clouds for depth */
+  box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1);
+}
+
+@keyframes floatCloud {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
