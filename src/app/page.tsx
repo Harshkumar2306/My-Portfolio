@@ -37,7 +37,7 @@ export default function Home() {
     { title: "SmartAgro", tech: ["React", "FastAPI", "Scikit-Learn"], desc: "Precision agriculture via Unsupervised K-Means clustering on multi-spectral indices.", id: "smartagro", status: "Production", github: "https://github.com/Harshkumar2306/SmartAgro", live: "https://smart-agro-eight.vercel.app/" }
   ];
 
-  const slideVariants = {
+  const slideVariants: any = {
     initial: { opacity: 0, x: 100 },
     enter: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
     exit: { opacity: 0, x: -100, transition: { duration: 0.3, ease: "easeIn" } }
