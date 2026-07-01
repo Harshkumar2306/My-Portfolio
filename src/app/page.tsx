@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight, FaInstagram, FaXTwitter, FaLocationDot, FaGlobe } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight, FaInstagram, FaXTwitter, FaLocationDot, FaGlobe, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import IndiaMapComponent from '../components/IndiaMapComponent';
 
 export default function Home() {
@@ -20,6 +20,15 @@ export default function Home() {
 
   const nextSection = () => setCurrentSection((prev) => (prev + 1) % totalSections);
   const prevSection = () => setCurrentSection((prev) => (prev - 1 + totalSections) % totalSections);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') setCurrentSection((prev) => (prev + 1) % totalSections);
+      if (e.key === 'ArrowLeft') setCurrentSection((prev) => (prev - 1 + totalSections) % totalSections);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const projects = [
     { title: "HarshPay", tech: ["Flutter", "Next.js", "WebRTC"], desc: "Offline-first P2P payment ecosystem with zero-trust match-and-settle escrow engine.", id: "harshpay", status: "Production", github: "https://github.com/Harshkumar2306/Harsh-Pay-App", live: "https://harsh-bank.vercel.app/" },
@@ -38,14 +47,29 @@ export default function Home() {
     <main style={{ overflow: 'hidden', height: '100vh', display: 'flex', flexDirection: 'column' }}>
       
       {/* Floating Edge Navigation */}
-      <div className="float-nav float-prev" onClick={prevSection} style={{ padding: '20px' }}>PREV</div>
-      <div className="float-nav float-next" onClick={nextSection} style={{ padding: '20px' }}>NEXT</div>
+      <motion.button 
+        whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }}
+        whileTap={{ scale: 0.9 }}
+        onClick={prevSection} 
+        style={{ position: 'fixed', top: '50%', left: 'var(--space-4)', transform: 'translateY(-50%)', zIndex: 100, width: '56px', height: '56px', borderRadius: '50%', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: '#F5F3EC', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', color: '#1A1A1A', transition: 'all 0.2s ease' }}
+      >
+        <FaChevronLeft size={24} style={{ marginLeft: '-4px' }} />
+      </motion.button>
+      
+      <motion.button 
+        whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }}
+        whileTap={{ scale: 0.9 }}
+        onClick={nextSection} 
+        style={{ position: 'fixed', top: '50%', right: 'var(--space-4)', transform: 'translateY(-50%)', zIndex: 100, width: '56px', height: '56px', borderRadius: '50%', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: '#F5F3EC', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', color: '#1A1A1A', transition: 'all 0.2s ease' }}
+      >
+        <FaChevronRight size={24} style={{ marginRight: '-4px' }} />
+      </motion.button>
 
       {/* Navigation Bar */}
       <nav style={{ padding: 'var(--space-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 50, position: 'relative' }}>
           {/* Logo */}
           <div className="logo" style={{ cursor: 'pointer', zIndex: 10, position: 'relative', display: 'flex', alignItems: 'center', gap: '12px' }} onClick={() => updateURL(0)}>
-            <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
+            <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
             <div style={{ fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.05em' }}>
               HARSH<span style={{ fontWeight: 400 }}>KUMAR</span>
             </div>
@@ -64,7 +88,7 @@ export default function Home() {
           
           {/* SECTION 0: HERO & ABOUT */}
           {currentSection === 0 && (
-            <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute' }}>
+            <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute', marginTop: '-8vh' }}>
               <section className="section" style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '0px' }}>
                 <div className="container">
                   <h1 className="title" style={{ fontSize: '3rem', marginBottom: 0 }}>Engineering Folio</h1>
@@ -116,8 +140,8 @@ export default function Home() {
                                <p className="label label-muted">{proj.status}</p>
                              </div>
                              <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
-                               <a href={proj.github} target="_blank" className="label label-muted" style={{ textDecoration: 'underline', display: 'flex', alignItems: 'center', gap: '4px' }}><FaGithub size={12}/> GITHUB</a>
-                               <a href={proj.live} target="_blank" className="label label-muted" style={{ textDecoration: 'underline' }}>LIVE</a>
+                               <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.github} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', borderRadius: '0px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGithub size={12}/> GITHUB</motion.a>
+                               <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.live} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', borderRadius: '0px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGlobe size={12}/> LIVE</motion.a>
                              </div>
                            </div>
                            <p className="body-text" style={{ marginBottom: 'var(--space-4)', fontSize: '0.85rem' }}>{proj.desc}</p>
@@ -125,12 +149,14 @@ export default function Home() {
                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                               <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                                 {proj.tech.map((t, idx) => (
-                                  <span key={idx} className="label label-muted" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px' }}>{t}</span>
+                                  <motion.span key={idx} whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} className="label label-muted" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 10px', borderRadius: '0px', cursor: 'pointer', transition: 'background-color 0.2s, color 0.2s' }}>{t}</motion.span>
                                 ))}
                               </div>
-                              <Link href={`/projects/${proj.id}`} className="submit-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                DEEP DIVE <FaArrowRight size={14} />
-                              </Link>
+                              <motion.div whileHover={{ x: 6 }}>
+                                <Link href={`/projects/${proj.id}?from=1`} className="submit-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                  DEEP DIVE <FaArrowRight size={14} />
+                                </Link>
+                              </motion.div>
                            </div>
                         </motion.div>
                       </div>
@@ -314,7 +340,7 @@ export default function Home() {
       {/* Footer */}
       <footer style={{ padding: 'var(--space-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(0,0,0,0.1)', zIndex: 50, position: 'relative', backgroundColor: 'var(--bg-color)' }}>
         <div className="label">BUILD BEYOND.</div>
-        <div style={{ display: 'flex', gap: 'var(--space-6)', alignItems: 'center' }}>
+        <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 'var(--space-6)', alignItems: 'center' }}>
            <a href="https://www.linkedin.com/in/harsh-kumar-17b839291" target="_blank" className="label" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
              <FaLinkedin size={18} /> LINKEDIN
            </a>
