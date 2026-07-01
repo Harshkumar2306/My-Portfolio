@@ -69,6 +69,7 @@ a {
 }
 
 .body-text {
+  color: rgba(26, 26, 26, 0.75);
   font-size: 0.95rem;
   line-height: 1.6;
 }
