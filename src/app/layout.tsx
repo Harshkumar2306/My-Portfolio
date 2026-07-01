@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harsh Kumar | Software Engineer",
+  title: "Harsh Kumar",
   description: "Engineering portfolio of Harsh Kumar, specializing in AI/ML and Distributed Systems.",
 };
 
