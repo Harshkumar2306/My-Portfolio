@@ -269,8 +269,8 @@ export default function Home() {
           {/* SECTION 4: CONTACT */}
           {currentSection === 4 && (
             <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
-              <section className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
-                 <div className="container" style={{ marginTop: '-40px' }}>
+              <section className="section">
+                 <div className="container">
                    <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
                      <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: 0 }}>LET'S TALK</h2>
                      <p className="label label-muted">LET'S MAKE SOMETHING REAL.</p>
