@@ -299,3 +299,44 @@ a {
     padding-right: 0;
   }
 }
+
+/* Responsive Navbar */
+.navbar {
+  padding: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  position: relative;
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.05em;
+}
+
+.nav-actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: var(--space-2) var(--space-2);
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .nav-actions {
+    gap: var(--space-2);
+  }
+  
+  .submit-btn {
+    padding: 8px 16px;
+    font-size: 0.65rem;
+  }
+}

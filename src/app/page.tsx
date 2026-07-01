@@ -68,20 +68,21 @@ export default function Home() {
       </motion.button>
 
       {/* Navigation Bar */}
-      <nav style={{ padding: 'var(--space-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 50, position: 'relative' }}>
+      <nav className="navbar">
           {/* Logo */}
           <div className="logo" style={{ cursor: 'pointer', zIndex: 10, position: 'relative', display: 'flex', alignItems: 'center', gap: '12px' }} onClick={() => setCurrentSection(0)}>
             <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
-            <div style={{ fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.05em' }}>
+            <div className="logo-text">
               HARSH<span style={{ fontWeight: 400 }}>KUMAR</span>
             </div>
           </div>
-        <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'center' }}>
-          <span className="label">PORTFOLIO</span>
-          <button onClick={() => setCurrentSection(4)} className="submit-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontFamily: 'inherit' }}>
-            <FaEnvelope size={14} /> CONTACT
-          </button>
-        </div>
+          
+          <div className="nav-actions">
+            <span className="label" style={{ display: 'none' }}>PORTFOLIO</span>
+            <button onClick={() => setCurrentSection(4)} className="submit-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontFamily: 'inherit' }}>
+              CONTACT <FaArrowRight size={14} />
+            </button>
+          </div>
       </nav>
 
       {/* Main Slider Content */}
