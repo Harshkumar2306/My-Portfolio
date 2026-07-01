@@ -48,19 +48,21 @@ export default function Home() {
       
       {/* Floating Edge Navigation */}
       <motion.button 
+        className="nav-btn nav-btn-prev"
         whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }}
         whileTap={{ scale: 0.9 }}
         onClick={prevSection} 
-        style={{ position: 'fixed', top: '50%', left: 'var(--space-4)', transform: 'translateY(-50%)', zIndex: 100, width: '56px', height: '56px', borderRadius: '50%', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: '#F5F3EC', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', color: '#1A1A1A', transition: 'all 0.2s ease' }}
+        style={{ transition: 'all 0.2s ease' }}
       >
         <FaChevronLeft size={24} style={{ marginLeft: '-4px' }} />
       </motion.button>
       
       <motion.button 
+        className="nav-btn nav-btn-next"
         whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }}
         whileTap={{ scale: 0.9 }}
         onClick={nextSection} 
-        style={{ position: 'fixed', top: '50%', right: 'var(--space-4)', transform: 'translateY(-50%)', zIndex: 100, width: '56px', height: '56px', borderRadius: '50%', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: '#F5F3EC', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', color: '#1A1A1A', transition: 'all 0.2s ease' }}
+        style={{ transition: 'all 0.2s ease' }}
       >
         <FaChevronRight size={24} style={{ marginRight: '-4px' }} />
       </motion.button>
@@ -338,9 +340,9 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer style={{ padding: 'var(--space-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(0,0,0,0.1)', zIndex: 50, position: 'relative', backgroundColor: 'var(--bg-color)' }}>
+      <footer className="footer-layout">
         <div className="label">BUILD BEYOND.</div>
-        <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 'var(--space-6)', alignItems: 'center' }}>
+        <div className="footer-center">
            <a href="https://www.linkedin.com/in/harsh-kumar-17b839291" target="_blank" className="label" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
              <FaLinkedin size={18} /> LINKEDIN
            </a>
