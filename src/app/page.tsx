@@ -90,7 +90,7 @@ export default function Home() {
           
           {/* SECTION 0: HERO & ABOUT */}
           {currentSection === 0 && (
-            <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute', marginTop: '-8vh' }}>
+            <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content slide-content-hero" style={{ marginTop: '-8vh' }}>
               <section className="section" style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '0px' }}>
                 <div className="container">
                   <h1 className="title" style={{ fontSize: '3rem', marginBottom: 0 }}>Engineering Folio</h1>
@@ -123,9 +123,9 @@ export default function Home() {
 
           {/* SECTION 1: PROJECTS (AWARDS GRID) */}
           {currentSection === 1 && (
-            <motion.div key="sec1" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute' }}>
-              <section className="section" style={{ paddingTop: 0 }}>
-                <div className="container" style={{ maxHeight: '70vh', overflowY: 'auto', paddingBottom: 'var(--space-8)' }}>
+            <motion.div key="sec1" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
+              <section className="section" style={{ paddingTop: '20px' }}>
+                <div className="container project-scroll-area" style={{ paddingBottom: 'var(--space-8)' }}>
                   <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
                     <h2 className="title" style={{ fontSize: '3rem', marginBottom: 0 }}>PROJECT ARCHIVES</h2>
                     <p className="label label-muted">DEEP DIVE ENGINEERING CASE STUDIES</p>
@@ -171,9 +171,9 @@ export default function Home() {
 
           {/* SECTION 2: ARCHITECTURE */}
           {currentSection === 2 && (
-            <motion.div key="sec2" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute' }}>
-               <section className="section" style={{ paddingTop: 0 }}>
-                 <div className="container" style={{ maxWidth: '1000px', maxHeight: '70vh', overflowY: 'auto', paddingBottom: 'var(--space-8)' }}>
+            <motion.div key="sec2" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
+              <section className="section" style={{ paddingTop: '20px' }}>
+                 <div className="container project-scroll-area" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-8)' }}>
                    <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>TECHNICAL ARCHITECTURE MAP</p>
                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-6)' }}>
                      
@@ -215,7 +215,7 @@ export default function Home() {
 
           {/* SECTION 3: EXPERIENCE & EDU */}
           {currentSection === 3 && (
-            <motion.div key="sec3" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute' }}>
+            <motion.div key="sec3" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <section className="section" style={{ paddingTop: 0 }}>
                  <div className="container">
                    <div className="grid-3" style={{ alignItems: 'stretch' }}>
@@ -267,7 +267,7 @@ export default function Home() {
 
           {/* SECTION 4: CONTACT */}
           {currentSection === 4 && (
-            <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" style={{ width: '100%', position: 'absolute' }}>
+            <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <section className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
                  <div className="container" style={{ marginTop: '-40px' }}>
                    <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
