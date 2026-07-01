@@ -147,7 +147,7 @@ export default function Home() {
                                <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.live} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', borderRadius: '0px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGlobe size={12}/> LIVE</motion.a>
                              </div>
                            </div>
-                           <p className="body-text" style={{ marginBottom: 'var(--space-4)', fontSize: '0.85rem' }}>{proj.desc}</p>
+                           <p className="body-text" style={{ marginBottom: 'var(--space-4)' }}>{proj.desc}</p>
                            
                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                               <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -227,7 +227,7 @@ export default function Home() {
                           <motion.div className="award-card" style={{ height: '100%' }} whileHover={{ x: 4, y: 4 }}>
                             <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}>EduBot Technologies</h3>
                             <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>GenAI & Prompt Eng. Intern | 2025</p>
-                            <p className="body-text" style={{ fontSize: '0.85rem' }}>Spearheaded the AutoPrompt Builder utilizing Python and Cohere APIs. Accelerated prompt iteration speed by 2x via multi-step chaining and automated evaluation metrics.</p>
+                            <p className="body-text">Spearheaded the AutoPrompt Builder utilizing Python and Cohere APIs. Accelerated prompt iteration speed by 2x via multi-step chaining and automated evaluation metrics.</p>
                           </motion.div>
                        </div>
                      </div>
@@ -251,7 +251,7 @@ export default function Home() {
                           <motion.div className="award-card" style={{ height: '100%' }} whileHover={{ x: 4, y: 4 }}>
                             <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}>Global Badges</h3>
                             <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>Cloud, Systems & AI</p>
-                            <ul className="body-text" style={{ fontSize: '0.85rem', paddingLeft: 'var(--space-2)' }}>
+                            <ul className="body-text" style={{ paddingLeft: 'var(--space-2)' }}>
                               <li style={{ marginBottom: '8px' }}><strong>AWS</strong> Certified Cloud Practitioner</li>
                               <li style={{ marginBottom: '8px' }}><strong>Oracle</strong> Java SE 17 Developer</li>
                               <li style={{ marginBottom: '8px' }}><strong>Oracle</strong> OCI Generative AI Professional</li>
@@ -302,7 +302,7 @@ export default function Home() {
                          </p>
                          <p className="body-text" style={{ paddingLeft: '22px', opacity: 0.7 }}>Andhra Pradesh, India</p>
                          
-                         <p className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: 'var(--space-3)', fontSize: '0.85rem', fontWeight: 600 }}>
+                         <p className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: 'var(--space-3)', fontWeight: 600 }}>
                            <FaGlobe size={14} /> Available for remote collaborations worldwide.
                          </p>
                        </div>
