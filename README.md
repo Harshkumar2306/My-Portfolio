@@ -5,7 +5,7 @@ An ultra-premium, brutalist-inspired interactive developer portfolio built with 
 Built using **Next.js 14, React, Framer Motion, Vanilla CSS, and TypeScript**.
 
 ## 🌟 Live Demo
-🌐 **Live Portfolio:** [https://harsh-kumar-git-main-harshkumar2306s-projects.vercel.app](https://harsh-kumar-git-main-harshkumar2306s-projects.vercel.app) *(Note: Update with your custom domain if applicable)*
+🌐 **Live Portfolio:** (harsh-kumar-blush.vercel.app)
 
 ## 🌟 Features & Architecture
 
