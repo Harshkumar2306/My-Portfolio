@@ -91,7 +91,7 @@ export default function Home() {
           
           {/* SECTION 0: HERO & ABOUT */}
           {currentSection === 0 && (
-            <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content slide-content-hero" style={{ marginTop: '-8vh' }}>
+            <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content slide-content-hero">
               <section className="section" style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '0px' }}>
                 <div className="container">
                   <h1 className="title" style={{ marginBottom: 0 }}>Engineering Folio</h1>
