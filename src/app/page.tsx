@@ -176,7 +176,7 @@ export default function Home() {
               <section className="section" style={{ paddingTop: '20px' }}>
                  <div className="container project-scroll-area architecture-container" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-4)' }}>
                    <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>TECHNICAL ARCHITECTURE MAP</p>
-                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-3)' }}>
+                   <div className="grid-3" style={{ gap: 'var(--space-3)' }}>
                      
                      {[
                        { category: "LANGUAGES", items: ["Java", "C++", "Python", "JavaScript", "TypeScript", "SQL", "Dart"] },
