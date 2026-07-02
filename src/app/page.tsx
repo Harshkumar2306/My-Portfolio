@@ -269,7 +269,7 @@ export default function Home() {
           {/* SECTION 4: CONTACT */}
           {currentSection === 4 && (
             <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
-              <section className="section" style={{ paddingTop: 'var(--space-4)', paddingBottom: 'var(--space-4)' }}>
+              <section className="section">
                  <div className="container">
                    <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
                      <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: 0 }}>LET'S TALK</h2>
