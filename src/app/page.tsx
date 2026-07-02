@@ -279,9 +279,9 @@ export default function Home() {
                    
                    <div className="grid-2 contact-grid">
                      {/* Contact Info */}
-                     <div>
-                       <div style={{ marginBottom: 'var(--space-3)' }}>
-                         <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>CONNECT</p>
+                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                       <div style={{ marginBottom: 'var(--space-2)' }}>
+                         <p className="label label-muted" style={{ marginBottom: 'var(--space-1)' }}>CONNECT</p>
                          <div className="contact-links">
                            <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://linkedin.com/in/harsh-kumar-17b839291" target="_blank" className="body-text contact-link">
                              <FaLinkedin /> LinkedIn
@@ -296,13 +296,13 @@ export default function Home() {
                        </div>
                        
                        <div>
-                         <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>LOCATION</p>
+                         <p className="label label-muted" style={{ marginBottom: 'var(--space-1)' }}>LOCATION</p>
                          <p className="body-text" style={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>
                            <FaLocationDot size={14} /> SRM University AP
                          </p>
                          <p className="body-text" style={{ paddingLeft: '22px', opacity: 0.7 }}>Andhra Pradesh, India</p>
                          
-                         <p className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: 'var(--space-3)', fontSize: '0.85rem', fontWeight: 600 }}>
+                         <p className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: 'var(--space-2)', fontSize: '0.85rem', fontWeight: 600 }}>
                            <FaGlobe size={14} /> Available for remote collaborations worldwide.
                          </p>
                        </div>
