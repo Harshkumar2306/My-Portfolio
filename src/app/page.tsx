@@ -268,10 +268,10 @@ export default function Home() {
 
           {/* SECTION 4: CONTACT */}
           {currentSection === 4 && (
-            <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
+            <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content slide-content-contact">
               <section className="section contact-section">
                  <div className="container">
-                   <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
+                   <div style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>
                       <h2 className="title" style={{ marginBottom: 0 }}>LET'S TALK</h2>
                      <p className="label label-muted">LET'S MAKE SOMETHING REAL.</p>
                      <p className="body-text" style={{ marginTop: 'var(--space-1)' }}>Ready to collaborate on the next big innovation? Drop me a line.</p>
@@ -280,7 +280,7 @@ export default function Home() {
                    <div className="grid-2 contact-grid">
                      {/* Contact Info */}
                      <div>
-                       <div style={{ marginBottom: 'var(--space-6)' }}>
+                       <div style={{ marginBottom: 'var(--space-3)' }}>
                          <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>CONNECT</p>
                          <div className="contact-links">
                            <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://linkedin.com/in/harsh-kumar-17b839291" target="_blank" className="body-text contact-link">
@@ -324,7 +324,7 @@ export default function Home() {
                               </div>
                               <div>
                                 <label className="label" style={{ display: 'block', marginBottom: '4px' }}>MESSAGE_</label>
-                                <textarea required placeholder="Tell me about your project..." rows={3} style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem', resize: 'none' }}></textarea>
+                                <textarea required placeholder="Tell me about your project..." rows={2} style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem', resize: 'none' }}></textarea>
                               </div>
                               <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className="submit-btn" style={{ marginTop: 'var(--space-1)', alignSelf: 'flex-start' }}>SEND_MESSAGE</motion.button>
                             </form>

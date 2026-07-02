@@ -47,7 +47,7 @@ a {
    ======================================== */
 
 .title {
-  font-size: clamp(1.8rem, 5vw, 4rem);
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: var(--space-2);
@@ -377,7 +377,7 @@ a {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
   
   .subtitle {
@@ -469,6 +469,10 @@ a {
     margin-top: 0 !important;
   }
 
+  .slide-content-contact {
+    padding-bottom: 80px; /* Reduced padding to help it fit on one screen */
+  }
+
   .project-scroll-area {
     max-height: none;
     overflow-y: visible;
@@ -510,7 +514,7 @@ a {
 
 @media (max-width: 380px) {
   .title {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
   }
 
   .logo-text {
