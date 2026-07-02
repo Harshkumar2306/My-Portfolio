@@ -174,7 +174,7 @@ export default function Home() {
           {currentSection === 2 && (
             <motion.div key="sec2" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <section className="section" style={{ paddingTop: '20px' }}>
-                 <div className="container project-scroll-area" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-4)' }}>
+                 <div className="container project-scroll-area architecture-container" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-4)' }}>
                    <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>TECHNICAL ARCHITECTURE MAP</p>
                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-3)' }}>
                      
