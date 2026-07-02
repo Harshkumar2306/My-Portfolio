@@ -174,9 +174,9 @@ export default function Home() {
           {currentSection === 2 && (
             <motion.div key="sec2" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <section className="section" style={{ paddingTop: '20px' }}>
-                 <div className="container project-scroll-area" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-8)' }}>
-                   <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>TECHNICAL ARCHITECTURE MAP</p>
-                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-6)' }}>
+                 <div className="container project-scroll-area" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-4)' }}>
+                   <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>TECHNICAL ARCHITECTURE MAP</p>
+                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-3)' }}>
                      
                      {[
                        { category: "LANGUAGES", items: ["Java", "C++", "Python", "JavaScript", "TypeScript", "SQL", "Dart"] },
@@ -188,8 +188,8 @@ export default function Home() {
                      ].map((stack, idx) => (
                         <div className="award-card-container" key={idx}>
                           <div className="award-card-offset" style={{ top: '6px', left: '6px' }}></div>
-                          <motion.div className="award-card" style={{ padding: 'var(--space-4)', minHeight: '180px' }} whileHover={{ x: 3, y: 3 }}>
-                            <h4 className="label" style={{ marginBottom: 'var(--space-4)' }}>{stack.category}</h4>
+                          <motion.div className="award-card" style={{ padding: 'var(--space-3)', minHeight: '120px' }} whileHover={{ x: 3, y: 3 }}>
+                            <h4 className="label" style={{ marginBottom: 'var(--space-2)' }}>{stack.category}</h4>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                               {stack.items.map((item, i) => (
                                 <motion.span 
@@ -198,7 +198,7 @@ export default function Home() {
                                   transition={{ duration: 2.5 + (i % 3), repeat: Infinity, ease: 'easeInOut', delay: i * 0.1 }}
                                   whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }}
                                   className="label label-muted" 
-                                  style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '6px 10px', cursor: 'default', transition: 'background-color 0.2s, color 0.2s' }}
+                                  style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', fontSize: '0.8rem', cursor: 'default', transition: 'background-color 0.2s, color 0.2s' }}
                                 >
                                   {item}
                                 </motion.span>
