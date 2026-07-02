@@ -550,3 +550,9 @@ a {
     font-size: 0.8rem;
   }
 }
+
+@media (min-width: 769px) {
+  .contact-container {
+    margin-top: -60px;
+  }
+}
