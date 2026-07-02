@@ -279,7 +279,7 @@ export default function Home() {
                    
                    <div className="grid-2 contact-grid">
                      {/* Contact Info */}
-                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                        <div style={{ marginBottom: 'var(--space-2)' }}>
                          <p className="label label-muted" style={{ marginBottom: 'var(--space-1)' }}>CONNECT</p>
                          <div className="contact-links">
