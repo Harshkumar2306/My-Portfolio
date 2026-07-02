@@ -54,7 +54,7 @@ export default function Home() {
         onClick={prevSection} 
         style={{ transition: 'all 0.2s ease' }}
       >
-        <FaChevronLeft size={24} style={{ marginLeft: '-4px' }} />
+        <FaChevronLeft size={20} />
       </motion.button>
       
       <motion.button 
@@ -64,14 +64,14 @@ export default function Home() {
         onClick={nextSection} 
         style={{ transition: 'all 0.2s ease' }}
       >
-        <FaChevronRight size={24} style={{ marginRight: '-4px' }} />
+        <FaChevronRight size={20} />
       </motion.button>
 
       {/* Navigation Bar */}
       <nav className="navbar">
           {/* Logo */}
-          <div className="logo" style={{ cursor: 'pointer', zIndex: 10, position: 'relative', display: 'flex', alignItems: 'center', gap: '12px' }} onClick={() => setCurrentSection(0)}>
-            <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
+          <div className="logo" style={{ cursor: 'pointer', zIndex: 10, position: 'relative', display: 'flex', alignItems: 'center', gap: '8px' }} onClick={() => setCurrentSection(0)}>
+            <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '32px', height: '32px', borderRadius: '6px', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
             <div className="logo-text">
               HARSH<span style={{ fontWeight: 400 }}>KUMAR</span>
             </div>
@@ -94,7 +94,7 @@ export default function Home() {
             <motion.div key="sec0" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content slide-content-hero" style={{ marginTop: '-8vh' }}>
               <section className="section" style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '0px' }}>
                 <div className="container">
-                  <h1 className="title" style={{ fontSize: '3rem', marginBottom: 0 }}>Engineering Folio</h1>
+                  <h1 className="title" style={{ marginBottom: 0 }}>Engineering Folio</h1>
                   <p className="subtitle" style={{ marginBottom: 'var(--space-4)' }}>Harsh Kumar | India</p>
                   
                   <div className="grid-2" style={{ borderTop: '1px solid rgba(0,0,0,0.1)', borderBottom: '1px solid rgba(0,0,0,0.1)', padding: 'var(--space-4) 0', textAlign: 'left', gap: 'var(--space-6)' }}>
@@ -128,7 +128,7 @@ export default function Home() {
               <section className="section" style={{ paddingTop: '20px' }}>
                 <div className="container project-scroll-area" style={{ paddingBottom: 'var(--space-8)' }}>
                   <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
-                    <h2 className="title" style={{ fontSize: '3rem', marginBottom: 0 }}>PROJECT ARCHIVES</h2>
+                    <h2 className="title" style={{ marginBottom: 0 }}>PROJECT ARCHIVES</h2>
                     <p className="label label-muted">DEEP DIVE ENGINEERING CASE STUDIES</p>
                   </div>
 
@@ -137,26 +137,26 @@ export default function Home() {
                       <div className="award-card-container" key={proj.id}>
                         <div className="award-card-offset"></div>
                         <motion.div className="award-card" whileHover={{ x: 4, y: 4 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-                           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 'var(--space-2)' }}>
+                           <div className="project-card-header">
                              <div>
-                               <h3 style={{ fontSize: '1.25rem', fontWeight: 800 }}>{proj.title}</h3>
+                               <h3 style={{ fontSize: '1.15rem', fontWeight: 800 }}>{proj.title}</h3>
                                <p className="label label-muted">{proj.status}</p>
                              </div>
-                             <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
-                               <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.github} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', borderRadius: '0px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGithub size={12}/> GITHUB</motion.a>
-                               <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.live} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', borderRadius: '0px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGlobe size={12}/> LIVE</motion.a>
+                             <div className="project-card-actions">
+                               <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.github} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGithub size={12}/> GITHUB</motion.a>
+                               <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href={proj.live} target="_blank" className="label" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 8px', display: 'flex', alignItems: 'center', gap: '4px', transition: 'all 0.2s', textDecoration: 'none', color: 'inherit' }}><FaGlobe size={12}/> LIVE</motion.a>
                              </div>
                            </div>
-                           <p className="body-text" style={{ marginBottom: 'var(--space-4)', fontSize: '0.85rem' }}>{proj.desc}</p>
+                           <p className="body-text" style={{ marginBottom: 'var(--space-3)', fontSize: '0.85rem' }}>{proj.desc}</p>
                            
-                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                              <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
+                           <div className="project-card-footer">
+                              <div className="project-card-tech">
                                 {proj.tech.map((t, idx) => (
-                                  <motion.span key={idx} whileHover={{ scale: 1.1, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} className="label label-muted" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 10px', borderRadius: '0px', cursor: 'pointer', transition: 'background-color 0.2s, color 0.2s' }}>{t}</motion.span>
+                                  <motion.span key={idx} whileHover={{ scale: 1.05, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} className="label label-muted" style={{ border: '1px solid rgba(0,0,0,0.1)', padding: '4px 10px', cursor: 'pointer', transition: 'background-color 0.2s, color 0.2s' }}>{t}</motion.span>
                                 ))}
                               </div>
                               <motion.div whileHover={{ x: 6 }}>
-                                <Link href={`/projects/${proj.id}?from=1`} className="submit-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <Link href={`/projects/${proj.id}?from=1`} className="submit-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap' }}>
                                   DEEP DIVE <FaArrowRight size={14} />
                                 </Link>
                               </motion.div>
@@ -269,27 +269,27 @@ export default function Home() {
           {/* SECTION 4: CONTACT */}
           {currentSection === 4 && (
             <motion.div key="sec4" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
-              <section className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
-                 <div className="container" style={{ marginTop: '-40px' }}>
+              <section className="section contact-section">
+                 <div className="container">
                    <div style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
-                     <h2 className="title" style={{ fontSize: '2.5rem', marginBottom: 0 }}>LET'S TALK</h2>
+                      <h2 className="title" style={{ marginBottom: 0 }}>LET'S TALK</h2>
                      <p className="label label-muted">LET'S MAKE SOMETHING REAL.</p>
                      <p className="body-text" style={{ marginTop: 'var(--space-1)' }}>Ready to collaborate on the next big innovation? Drop me a line.</p>
                    </div>
                    
-                   <div className="grid-2" style={{ alignItems: 'center' }}>
+                   <div className="grid-2 contact-grid">
                      {/* Contact Info */}
                      <div>
                        <div style={{ marginBottom: 'var(--space-6)' }}>
                          <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>CONNECT</p>
-                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-                           <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://linkedin.com/in/harsh-kumar-17b839291" target="_blank" className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600, border: '1px solid rgba(0,0,0,0.1)', padding: '8px 16px', borderRadius: '30px', transition: 'background-color 0.2s, color 0.2s' }}>
+                         <div className="contact-links">
+                           <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://linkedin.com/in/harsh-kumar-17b839291" target="_blank" className="body-text contact-link">
                              <FaLinkedin /> LinkedIn
                            </motion.a>
-                           <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://www.instagram.com/har_sh0o23/" target="_blank" className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600, border: '1px solid rgba(0,0,0,0.1)', padding: '8px 16px', borderRadius: '30px', transition: 'background-color 0.2s, color 0.2s' }}>
+                           <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://www.instagram.com/har_sh0o23/" target="_blank" className="body-text contact-link">
                              <FaInstagram /> Instagram
                            </motion.a>
-                           <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://x.com/harsh0o23" target="_blank" className="body-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600, border: '1px solid rgba(0,0,0,0.1)', padding: '8px 16px', borderRadius: '30px', transition: 'background-color 0.2s, color 0.2s' }}>
+                           <motion.a whileHover={{ y: -2, backgroundColor: '#1A1A1A', color: '#F5F3EC' }} href="https://x.com/harsh0o23" target="_blank" className="body-text contact-link">
                              <FaXTwitter /> X
                            </motion.a>
                          </div>

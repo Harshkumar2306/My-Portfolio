@@ -2,11 +2,11 @@
 
 :root {
   /* Editorial Light Mode Palette */
-  --bg-color: #F5F3EC; /* Elegant beige/off-white */
+  --bg-color: #F5F3EC;
   --bg-card: #FFFFFF;
-  --bg-offset: #E2DFD8; /* Slightly darker beige for the offset shadow */
+  --bg-offset: #E2DFD8;
   
-  --text-main: #1A1A1A; /* Charcoal / Off-black */
+  --text-main: #1A1A1A;
   --text-muted: #666666;
   
   --font-main: 'Inter', sans-serif;
@@ -42,9 +42,12 @@ a {
   text-decoration: none;
 }
 
-/* Editorial Typography */
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: var(--space-2);
@@ -74,7 +77,10 @@ a {
   line-height: 1.6;
 }
 
-/* Layout Utilities */
+/* ========================================
+   LAYOUT UTILITIES
+   ======================================== */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -87,7 +93,10 @@ a {
   position: relative;
 }
 
-/* The CSS Design Awards Offset Card */
+/* ========================================
+   AWARD CARD SYSTEM
+   ======================================== */
+
 .award-card-container {
   position: relative;
   margin-bottom: var(--space-4);
@@ -116,52 +125,28 @@ a {
   transform: translate(4px, 4px);
 }
 
-/* Floating Navigation Indicators (PREV / NEXT) */
-.float-nav {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  cursor: pointer;
-  z-index: 100;
-}
+/* ========================================
+   CSS GRID SYSTEMS
+   ======================================== */
 
-.float-prev {
-  left: var(--space-4);
-  writing-mode: vertical-rl;
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.float-next {
-  right: var(--space-4);
-  writing-mode: vertical-rl;
-}
-
-/* CSS Grid Systems */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-8);
+  gap: var(--space-4);
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-8);
+  gap: var(--space-4);
 }
 
-@media (min-width: 768px) {
-  .grid-2 { grid-template-columns: 1fr 1fr; }
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
-}
+/* ========================================
+   BUTTON
+   ======================================== */
 
-/* Button */
 .submit-btn {
-  background-color: #E6Ddfc; /* Subtle purple matching the screenshot's 'SUBMIT' button */
+  background-color: #E6Ddfc;
   color: #1A1A1A;
   padding: 12px 24px;
   font-size: 0.75rem;
@@ -172,31 +157,64 @@ a {
   cursor: pointer;
 }
 
-/* Responsive Nav Buttons */
+/* ========================================
+   NAVBAR
+   ======================================== */
+
+.navbar {
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.nav-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* ========================================
+   FLOATING NAV BUTTONS
+   ======================================== */
+
 .nav-btn {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   z-index: 100;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,0.1);
   background-color: #F5F3EC;
   display: flex;
   align-items: center;
-   
+  justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   color: #1A1A1A;
 }
 
-.nav-btn-prev { left: var(--space-4); }
-.nav-btn-next { right: var(--space-4); }
+.nav-btn-prev { left: var(--space-2); }
+.nav-btn-next { right: var(--space-2); }
 
-/* Responsive Footer */
+/* ========================================
+   FOOTER
+   ======================================== */
+
 .footer-layout {
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -204,54 +222,22 @@ a {
   z-index: 50;
   position: relative;
   background-color: var(--bg-color);
+  flex-shrink: 0;
 }
+
 .footer-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: var(--space-6);
+  gap: var(--space-4);
   align-items: center;
 }
 
-/* Mobile Media Queries */
-@media (max-width: 768px) {
-  .title {
-    font-size: 2.2rem !important;
-  }
-  
-  .nav-btn {
-    width: 44px;
-    height: 44px;
-    top: auto;
-    bottom: var(--space-4);
-    transform: none;
-  }
-  .nav-btn-prev { left: var(--space-4); }
-  .nav-btn-next { right: var(--space-4); }
+/* ========================================
+   SLIDE CONTENT (SCROLLABLE SECTIONS)
+   ======================================== */
 
-  .footer-layout {
-    flex-direction: column;
-    gap: var(--space-4);
-    text-align: center;
-    padding-bottom: 80px; /* Space for the bottom-positioned nav buttons */
-  }
-  .footer-center {
-    position: relative;
-    left: auto;
-    transform: none;
-    flex-wrap: wrap;
-     
-    gap: var(--space-4);
-  }
-  
-  /* Make the main grid single column */
-  .grid-2 {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* Slider Scrolling Architecture */
 .slide-content {
   width: 100%;
   height: 100%;
@@ -262,8 +248,13 @@ a {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-   
-  padding-bottom: var(--space-4);
+  justify-content: center;
+  padding: 0 var(--space-2);
+}
+
+.slide-content > .section {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .slide-content::-webkit-scrollbar {
@@ -283,11 +274,195 @@ a {
   padding-right: var(--space-2);
 }
 
+/* ========================================
+   PROJECT CARD LAYOUT (RESPONSIVE)
+   ======================================== */
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-2);
+  gap: var(--space-2);
+}
+
+.project-card-actions {
+  display: flex;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.project-card-tech {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+/* ========================================
+   CONTACT SOCIAL LINKS
+   ======================================== */
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+/* ========================================
+   DESKTOP (min-width: 769px)
+   ======================================== */
+
+@media (min-width: 769px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  .navbar {
+    padding: var(--space-4);
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .nav-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .nav-btn-prev { left: var(--space-4); }
+  .nav-btn-next { right: var(--space-4); }
+
+  .slide-content {
+    padding: 0;
+  }
+}
+
+/* ========================================
+   TABLET (769px - 1024px)
+   ======================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+  
+  .footer-center {
+    gap: var(--space-3);
+  }
+}
+
+/* ========================================
+   MOBILE (max-width: 768px)
+   ======================================== */
+
 @media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem !important;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .body-text {
+    font-size: 0.88rem;
+  }
+  
+  .section {
+    padding: var(--space-4) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-2);
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: var(--space-1) var(--space-2);
+  }
+  
+  .logo-text {
+    font-size: 0.9rem;
+  }
+  
+  .nav-actions {
+    gap: var(--space-1);
+  }
+  
+  .submit-btn {
+    padding: 8px 14px;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Nav buttons: smaller and at bottom */
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    top: auto;
+    bottom: 80px;
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .nav-btn-prev { left: var(--space-2); }
+  .nav-btn-next { right: var(--space-2); }
+
+  /* Footer stacks vertically */
+  .footer-layout {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+    padding: var(--space-2) var(--space-2);
+  }
+  .footer-center {
+    position: relative;
+    left: auto;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  /* Grids single column */
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3) !important;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3) !important;
+  }
+
+  /* Slides: scroll from top, generous bottom padding for nav buttons */
   .slide-content {
     justify-content: flex-start;
-    padding-top: var(--space-4);
-    padding-bottom: 120px;
+    padding-top: var(--space-2);
+    padding-bottom: 140px;
+  }
+
+  .slide-content > .section {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
   .slide-content-hero {
@@ -299,50 +474,75 @@ a {
     overflow-y: visible;
     padding-right: 0;
   }
-}
 
-/* Responsive Navbar */
-.navbar {
-  padding: var(--space-4);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 50;
-  position: relative;
-}
-
-.logo-text {
-  font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: -0.05em;
-}
-
-.nav-actions {
-  display: flex;
-  gap: var(--space-4);
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: var(--space-2) var(--space-2);
+  /* Award card offset: tighter on mobile */
+  .award-card-offset {
+    top: 8px;
+    left: 8px;
   }
-  
+
+  .award-card {
+    padding: var(--space-3);
+  }
+
+  /* Project card header stacks on small screens */
+  .project-card-header {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .project-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  /* Contact links */
+  .contact-link {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   VERY SMALL PHONES (max-width: 380px)
+   ======================================== */
+
+@media (max-width: 380px) {
+  .title {
+    font-size: 1.5rem !important;
+  }
+
   .logo-text {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
-  
-  .nav-actions {
+
+  .submit-btn {
+    padding: 6px 10px;
+    font-size: 0.6rem;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    bottom: 70px;
+  }
+
+  .footer-center {
     gap: var(--space-2);
   }
   
-  .submit-btn {
-    padding: 8px 16px;
+  .label {
     font-size: 0.65rem;
+    letter-spacing: 0.1em;
   }
-}
 
-.slide-content > .section {
-  margin-top: auto;
-  margin-bottom: auto;
+  .body-text {
+    font-size: 0.82rem;
+  }
+
+  .contact-link {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
 }
