@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+      
+      .bg { fill: #f5f3ec; }
+      .grid { stroke: rgba(0,0,0,0.05); stroke-width: 1; }
+      
+      .title { 
+        font-family: 'Inter', sans-serif; 
+        font-size: 52px; 
+        font-weight: 800; 
+        fill: #1a1a1a; 
+        text-anchor: middle;
+        letter-spacing: -2px;
+      }
+      
+      .subtitle { 
+        font-family: 'Space Mono', monospace; 
+        font-size: 14px; 
+        font-weight: 700; 
+        fill: #666; 
+        text-anchor: middle;
+        letter-spacing: 6px;
+      }
+
+      .bracket {
+        font-family: 'Space Mono', monospace; 
+        font-size: 52px;
+        font-weight: 400;
+        fill: #1a1a1a;
+      }
+
+      /* Glitch Animations */
+      @keyframes glitch {
+        0% { transform: translate(0) }
+        20% { transform: translate(-2px, 1px) }
+        40% { transform: translate(-1px, -1px) }
+        60% { transform: translate(2px, 1px) }
+        80% { transform: translate(1px, -1px) }
+        100% { transform: translate(0) }
+      }
+
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(800%); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+      
+      @keyframes pan {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-40px); }
+      }
+
+      .glitch-text { animation: glitch 3s infinite; }
+      .pulse-text { animation: pulse 2s infinite; }
+      .grid-pattern { animation: pan 10s linear infinite; }
+      
+      .hud-text {
+        font-family: 'Space Mono', monospace; 
+        font-size: 10px; 
+        fill: rgba(0,0,0,0.4); 
+      }
+    </style>
+    
+    <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="rgba(0,0,0,0.08)" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg" />
+  
+  <!-- Moving Grid -->
+  <g class="grid-pattern">
+    <rect width="120%" height="100%" fill="url(#dotGrid)" />
+  </g>
+
+  <!-- Scanline -->
+  <rect width="100%" height="4" fill="rgba(0,0,0,0.05)">
+    <animate attributeName="y" values="-10;260" dur="4s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- HUD Elements -->
+  <text x="20" y="30" class="hud-text pulse-text">SYS_STATE: ONLINE</text>
+  <text x="20" y="220" class="hud-text">LAT: 16.5062 / LON: 80.6480</text>
+  <text x="780" y="30" text-anchor="end" class="hud-text">V_2.0.4</text>
+  <text x="780" y="220" text-anchor="end" class="hud-text pulse-text">[ RECORDING ]</text>
+
+  <!-- Center Content -->
+  <g transform="translate(400, 130)">
+    <!-- Brackets -->
+    <text x="-220" y="15" class="bracket pulse-text">[</text>
+    <text x="195" y="15" class="bracket pulse-text">]</text>
+
+    <!-- Main Title -->
+    <text x="0" y="10" class="title glitch-text">HARSH KUMAR</text>
+    <text x="2" y="10" class="title" style="fill: rgba(255,51,51,0.5); mix-blend-mode: multiply; animation: glitch 2s infinite reverse;">HARSH KUMAR</text>
+    <text x="-2" y="10" class="title" style="fill: rgba(0,255,65,0.5); mix-blend-mode: multiply; animation: glitch 4s infinite;">HARSH KUMAR</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="50" class="subtitle">DIGITAL ARCHITECT</text>
+  </g>
+  
+  <!-- Corner Borders -->
+  <path d="M10,30 L10,10 L30,10" fill="none" stroke="#1a1a1a" stroke-width="2" />
+  <path d="M790,30 L790,10 L770,10" fill="none" stroke="#1a1a1a" stroke-width="2" />
+  <path d="M10,220 L10,240 L30,240" fill="none" stroke="#1a1a1a" stroke-width="2" />
+  <path d="M790,220 L790,240 L770,240" fill="none" stroke="#1a1a1a" stroke-width="2" />
+</svg>

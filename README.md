@@ -1,6 +1,6 @@
 <div align="center">
   
-# 📐 HARSH KUMAR // DIGITAL ARCHITECT
+<img src="./public/readme-banner.svg" alt="Harsh Kumar - Digital Architect" width="100%" />
 
 **An ultra-premium, brutalist-inspired interactive developer portfolio.**
 
