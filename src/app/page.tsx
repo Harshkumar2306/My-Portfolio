@@ -260,7 +260,7 @@ export default function Home() {
           {currentSection === 1 && (
             <motion.div key="sec1" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <div className="section-number">02</div>
-              <section className="section" style={{ paddingTop: 'clamp(30px, 5vh, 60px)' }}>
+              <section className="section" style={{ paddingTop: 'clamp(50px, 8vh, 90px)' }}>
                 <div className="container project-scroll-area" style={{ paddingBottom: 'var(--space-8)' }}>
                   <motion.div variants={childVariants} style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
                     <h2 className="title section-title glitch-title" data-text="PROJECT ARCHIVES" style={{ marginBottom: 0 }}>PROJECT ARCHIVES</h2>
@@ -319,7 +319,7 @@ export default function Home() {
           {currentSection === 2 && (
             <motion.div key="sec2" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <div className="section-number">03</div>
-              <section className="section" style={{ paddingTop: 'clamp(30px, 5vh, 60px)' }}>
+              <section className="section" style={{ paddingTop: 'clamp(50px, 8vh, 90px)' }}>
                  <div className="container project-scroll-area architecture-container" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-4)' }}>
                    <motion.div variants={childVariants}>
                      <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>TECHNICAL ARCHITECTURE MAP</p>
