@@ -314,7 +314,7 @@ export default function Home() {
           {currentSection === 2 && (
             <motion.div key="sec2" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <div className="section-number">03</div>
-              <section className="section" style={{ paddingTop: '20px' }}>
+              <section className="section" style={{ paddingTop: 'clamp(30px, 5vh, 60px)' }}>
                  <div className="container project-scroll-area architecture-container" style={{ maxWidth: '1000px', paddingBottom: 'var(--space-4)' }}>
                    <motion.div variants={childVariants}>
                      <p className="label label-muted" style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>TECHNICAL ARCHITECTURE MAP</p>
