@@ -2,16 +2,28 @@
   
 <img src="./public/readme-banner.svg" alt="Harsh Kumar - Digital Architect" width="100%" />
 
-**An ultra-premium, brutalist-inspired interactive developer portfolio.**
+<p align="center">
+  <i>An ultra-premium, brutalist-inspired interactive developer portfolio.</i>
+</p>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Harshkumar2306/My-Portfolio)
-<br/>
-![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+<p align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https://github.com/Harshkumar2306/My-Portfolio">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+  </a>
+</p>
 
-[**View Live Demo**](https://harsh-kumar-blush.vercel.app/) • [**Report Bug**](https://github.com/Harshkumar2306/My-Portfolio/issues) • [**Request Feature**](https://github.com/Harshkumar2306/My-Portfolio/issues)
+<p align="center">
+  <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/FRAMER_MOTION-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/VANILLA_CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+</p>
+
+<p align="center">
+  <b><a href="https://harsh-kumar-blush.vercel.app/">[ ⬢ LIVE DEMO ]</a></b> &nbsp;•&nbsp;
+  <b><a href="https://github.com/Harshkumar2306/My-Portfolio/issues">[ 🐛 REPORT BUG ]</a></b> &nbsp;•&nbsp;
+  <b><a href="https://github.com/Harshkumar2306/My-Portfolio/issues">[ ✨ REQUEST FEATURE ]</a></b>
+</p>
 
 </div>
 
