@@ -6,11 +6,7 @@
   <code>// AN ULTRA-PREMIUM, BRUTALIST-INSPIRED INTERACTIVE DEVELOPER PORTFOLIO //</code>
 </h3>
 
-<p align="center">
-  <a href="https://github.com/Harshkumar2306/My-Portfolio/stargazers"><img src="https://img.shields.io/github/stars/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="Stars" /></a>
-  <a href="https://github.com/Harshkumar2306/My-Portfolio/network/members"><img src="https://img.shields.io/github/forks/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="Forks" /></a>
-  <a href="https://github.com/Harshkumar2306/My-Portfolio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="License" /></a>
-</p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
