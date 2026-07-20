@@ -2,9 +2,9 @@
   
 <img src="./public/readme-banner.svg" alt="Harsh Kumar - Digital Architect" width="100%" />
 
-<p align="center">
-  <i>An ultra-premium, brutalist-inspired interactive developer portfolio.</i>
-</p>
+<h3 align="center">
+  <code>// AN ULTRA-PREMIUM, BRUTALIST-INSPIRED INTERACTIVE DEVELOPER PORTFOLIO //</code>
+</h3>
 
 <p align="center">
   <a href="https://github.com/Harshkumar2306/My-Portfolio/stargazers"><img src="https://img.shields.io/github/stars/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="Stars" /></a>
