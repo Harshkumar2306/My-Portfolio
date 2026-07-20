@@ -163,17 +163,7 @@ export default function Home() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Marquee Header */}
-      <div className="marquee-container">
-        <div className="marquee-content">
-          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
-          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
-          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
-          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
-          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
-          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
-        </div>
-      </div>
+
 
       {/* HUD Elements */}
       <div className="hud-element hud-top-right">SYS_STATE: ONLINE // 13ms</div>
@@ -199,7 +189,7 @@ export default function Home() {
       </motion.button>
 
       {/* Navigation Bar */}
-      <nav className="navbar" style={{ marginTop: '20px' }}>
+      <nav className="navbar">
           <div className="logo" style={{ cursor: 'none', zIndex: 10, position: 'relative', display: 'flex', alignItems: 'center', gap: '8px' }} onClick={() => setCurrentSection(0)}>
             <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '32px', height: '32px', borderRadius: '6px', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
             <div className="logo-text">

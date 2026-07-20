@@ -767,41 +767,6 @@ a {
   bottom: -15px; right: -25px;
 }
 
-/* ========================================
-   MARQUEE
-   ======================================== */
-.marquee-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #1a1a1a;
-  color: #F5F3EC;
-  padding: 4px 0;
-  z-index: 60;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.marquee-content {
-  display: inline-block;
-  animation: marquee-scroll 20s linear infinite;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.marquee-content span {
-  padding: 0 20px;
-}
-
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
 @media (max-width: 600px) {
   .hud-element {
