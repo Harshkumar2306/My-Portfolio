@@ -8,12 +8,13 @@ export default function CanvasInteractivity() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d', { alpha: false }); // Optimize by disabling alpha on context if possible, but we need background
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animationFrameId: number;
     let particles: Particle[] = [];
     const mouse = { x: -1000, y: -1000 };
+    let time = 0;
 
     class Particle {
       x: number;
@@ -22,54 +23,48 @@ export default function CanvasInteractivity() {
       vy: number;
       baseX: number;
       baseY: number;
+      phase: number;
 
       constructor(w: number, h: number) {
         this.x = Math.random() * w;
         this.y = Math.random() * h;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.vx = (Math.random() - 0.5) * 1;
-        this.vy = (Math.random() - 0.5) * 1;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
+        this.phase = Math.random() * Math.PI * 2;
       }
 
-      update(w: number, h: number) {
-        // Bounce off walls
+      update(w: number, h: number, t: number) {
         if (this.x < 0 || this.x > w) this.vx *= -1;
         if (this.y < 0 || this.y > h) this.vy *= -1;
         
         this.x += this.vx;
         this.y += this.vy;
 
-        // Interaction with mouse (CPU Intensive distance calculation)
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        const interactionRadius = 200;
+        const interactionRadius = 180;
         if (distance < interactionRadius) {
           const forceDirectionX = dx / distance;
           const forceDirectionY = dy / distance;
           const force = (interactionRadius - distance) / interactionRadius;
-          
-          this.x -= forceDirectionX * force * 5;
-          this.y -= forceDirectionY * force * 5;
+          this.x -= forceDirectionX * force * 4;
+          this.y -= forceDirectionY * force * 4;
         } else {
-          // Return to base slowly if not near mouse
-          if (this.x !== this.baseX) {
-              const dxBase = this.baseX - this.x;
-              this.x += dxBase * 0.01;
-          }
-          if (this.y !== this.baseY) {
-              const dyBase = this.baseY - this.y;
-              this.y += dyBase * 0.01;
-          }
+          if (this.x !== this.baseX) this.x += (this.baseX - this.x) * 0.008;
+          if (this.y !== this.baseY) this.y += (this.baseY - this.y) * 0.008;
         }
       }
 
-      draw(ctx: CanvasRenderingContext2D) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      draw(ctx: CanvasRenderingContext2D, t: number) {
+        // Subtle pulsing opacity
+        const pulse = 0.08 + Math.sin(t * 0.002 + this.phase) * 0.04;
+        ctx.fillStyle = `rgba(0, 0, 0, ${pulse})`;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
         ctx.fill();
       }
     }
@@ -78,8 +73,9 @@ export default function CanvasInteractivity() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       
-      // Calculate number of particles based on screen size (CPU intensive mesh)
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 10000);
+      // Optimized: fewer particles, still looks great
+      const area = canvas.width * canvas.height;
+      const numberOfParticles = Math.min(Math.floor(area / 15000), 120);
       particles = [];
       for (let i = 0; i < numberOfParticles; i++) {
         particles.push(new Particle(canvas.width, canvas.height));
@@ -87,24 +83,26 @@ export default function CanvasInteractivity() {
     };
 
     const animate = () => {
-      // Clear with the beige color
+      time++;
       ctx.fillStyle = '#F5F3EC'; 
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update(canvas.width, canvas.height);
-        particles[i].draw(ctx);
+        particles[i].update(canvas.width, canvas.height, time);
+        particles[i].draw(ctx, time);
 
-        // Connect nearby particles to form a mesh
-        for (let j = i; j < particles.length; j++) {
+        // Connect nearby particles — optimized distance check
+        for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (distance < 120) {
+          if (distSq < 14400) { // 120^2
+            const distance = Math.sqrt(distSq);
+            const pulse = 0.06 + Math.sin(time * 0.001 + i * 0.1) * 0.03;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(0, 0, 0, ${0.1 - distance / 1200})`; // Faint dark lines
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(0, 0, 0, ${pulse - distance / 2400})`;
+            ctx.lineWidth = 0.4;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -120,9 +118,7 @@ export default function CanvasInteractivity() {
       mouse.y = e.clientY;
     };
 
-    const handleResize = () => {
-      init();
-    };
+    const handleResize = () => init();
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);

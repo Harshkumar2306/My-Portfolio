@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import CanvasInteractivity from "./components/CanvasInteractivity";
+import CustomCursor from "./components/CustomCursorNew";
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
+        <CustomCursor />
         <CanvasInteractivity />
         {children}
       </body>
