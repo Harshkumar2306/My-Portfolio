@@ -460,39 +460,27 @@ export default function Home() {
                        </div>
                      </div>
                      
-                     {/* Contact Form - Brutalist/Editorial Theme */}
-                     <motion.div variants={cardVariants} whileHover={{ y: -4 }}>
-                       <div className="brutalist-form-container" style={{ 
-                         backgroundColor: 'var(--bg-card)', 
-                         border: '2px solid var(--text-main)', 
-                         padding: 'var(--space-4)',
-                         position: 'relative'
-                       }}>
-                         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', backgroundImage: 'radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px)', backgroundSize: '10px 10px', opacity: 0.5 }}></div>
-                         <div style={{ position: 'relative', zIndex: 2 }}>
-                           <form onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully! I will get back to you soon.'); (e.target as HTMLFormElement).reset(); }} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                             <div className="brutalist-input-group">
-                               <label className="label" style={{ display: 'block', marginBottom: '8px', fontWeight: 800 }}>[ NAME ]</label>
-                               <input type="text" required placeholder="Enter your name" className="brutalist-input" />
-                             </div>
-                             <div className="brutalist-input-group">
-                               <label className="label" style={{ display: 'block', marginBottom: '8px', fontWeight: 800 }}>[ EMAIL ]</label>
-                               <input type="email" required placeholder="your.email@example.com" className="brutalist-input" />
-                             </div>
-                             <div className="brutalist-input-group">
-                               <label className="label" style={{ display: 'block', marginBottom: '8px', fontWeight: 800 }}>[ MESSAGE ]</label>
-                               <textarea required placeholder="Tell me about your project..." rows={3} className="brutalist-input" style={{ resize: 'none' }}></textarea>
-                             </div>
-                             <motion.button 
-                               whileHover={{ backgroundColor: '#1A1A1A', color: '#F5F3EC', x: 2, y: -2, boxShadow: '4px 4px 0px rgba(0,0,0,0.1)' }} 
-                               whileTap={{ scale: 0.98, x: 0, y: 0, boxShadow: '0px 0px 0px rgba(0,0,0,0.1)' }} 
-                               type="submit" 
-                               className="brutalist-submit-btn"
-                             >
-                               SEND MESSAGE
-                             </motion.button>
-                           </form>
-                         </div>
+                     {/* Contact Form */}
+                     <motion.div variants={cardVariants}>
+                       <div className="award-card-container" style={{ marginBottom: 0 }}>
+                          <div className="award-card-offset" style={{ top: '8px', left: '8px' }}></div>
+                          <div className="award-card" style={{ padding: 'var(--space-4)' }}>
+                            <form onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully! I will get back to you soon.'); (e.target as HTMLFormElement).reset(); }} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                              <div>
+                                <label className="label" style={{ display: 'block', marginBottom: '4px' }}>NAME_</label>
+                                <input type="text" required placeholder="Enter your name" style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem', outline: 'none' }} />
+                              </div>
+                              <div>
+                                <label className="label" style={{ display: 'block', marginBottom: '4px' }}>EMAIL_</label>
+                                <input type="email" required placeholder="your.email@example.com" style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem', outline: 'none' }} />
+                              </div>
+                              <div>
+                                <label className="label" style={{ display: 'block', marginBottom: '4px' }}>MESSAGE_</label>
+                                <textarea required placeholder="Tell me about your project..." rows={2} style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem', resize: 'none', outline: 'none' }}></textarea>
+                              </div>
+                              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className="submit-btn" style={{ marginTop: 'var(--space-1)', alignSelf: 'flex-start' }}>SEND_MESSAGE</motion.button>
+                            </form>
+                          </div>
                        </div>
                      </motion.div>
                    </motion.div>
