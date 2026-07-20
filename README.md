@@ -15,11 +15,36 @@
   <img src="https://img.shields.io/badge/VANILLA_CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
 </p>
 
-<p align="center">
-  <b><a href="https://harsh-kumar-blush.vercel.app/">[ ⬢ LIVE DEMO ]</a></b> &nbsp;•&nbsp;
-  <b><a href="https://github.com/Harshkumar2306/My-Portfolio/issues">[ 🐛 REPORT BUG ]</a></b> &nbsp;•&nbsp;
-  <b><a href="https://github.com/Harshkumar2306/My-Portfolio/issues">[ ✨ REQUEST FEATURE ]</a></b>
-</p>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="250">
+        <br/>
+        <a href="https://harsh-kumar-blush.vercel.app/">
+          <img src="https://img.shields.io/badge/⬢%20VIEW%20LIVE%20DEMO-F5F3EC?style=for-the-badge&logoColor=black&color=F5F3EC&labelColor=1A1A1A" alt="Live Demo" />
+        </a>
+        <br/>
+        <br/>
+      </td>
+      <td align="center" width="250">
+        <br/>
+        <a href="https://github.com/Harshkumar2306/My-Portfolio/issues">
+          <img src="https://img.shields.io/badge/🐛%20REPORT%20BUG-1A1A1A?style=for-the-badge" alt="Report Bug" />
+        </a>
+        <br/>
+        <br/>
+      </td>
+      <td align="center" width="250">
+        <br/>
+        <a href="https://github.com/Harshkumar2306/My-Portfolio/issues">
+          <img src="https://img.shields.io/badge/✨%20REQUEST%20FEATURE-1A1A1A?style=for-the-badge" alt="Request Feature" />
+        </a>
+        <br/>
+        <br/>
+      </td>
+    </tr>
+  </table>
+</div>
 
 </div>
 
