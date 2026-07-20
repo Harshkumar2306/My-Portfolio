@@ -258,7 +258,7 @@ export default function Home() {
               <section className="section" style={{ paddingTop: '20px' }}>
                 <div className="container project-scroll-area" style={{ paddingBottom: 'var(--space-8)' }}>
                   <motion.div variants={childVariants} style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
-                    <h2 className="title" style={{ marginBottom: 0 }}>PROJECT ARCHIVES</h2>
+                    <h2 className="title glitch-title" data-text="PROJECT ARCHIVES" style={{ marginBottom: 0 }}>PROJECT ARCHIVES</h2>
                     <p className="label label-muted">DEEP DIVE ENGINEERING CASE STUDIES</p>
                   </motion.div>
 
@@ -419,7 +419,7 @@ export default function Home() {
               <section className="section contact-section">
                  <div className="container contact-container">
                    <motion.div variants={childVariants} style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
-                      <h2 className="title" style={{ marginBottom: 0 }}>LET&apos;S TALK</h2>
+                      <h2 className="title glitch-title" data-text="LET'S TALK" style={{ marginBottom: 0 }}>LET&apos;S TALK</h2>
                      <p className="label label-muted">LET&apos;S MAKE SOMETHING REAL.</p>
                      <p className="body-text" style={{ marginTop: 'var(--space-1)' }}>Ready to collaborate on the next big innovation? Drop me a line.</p>
                    </motion.div>
