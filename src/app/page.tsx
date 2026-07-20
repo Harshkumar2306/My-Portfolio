@@ -5,7 +5,6 @@ import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-mo
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight, FaInstagram, FaXTwitter, FaLocationDot, FaGlobe, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import IndiaMapComponent from '../components/IndiaMapComponent';
-import AnimatedCounter from './components/AnimatedCounter';
 import Typewriter from './components/Typewriter';
 
 /* ========================================
@@ -217,7 +216,7 @@ export default function Home() {
               <section className="section" style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '0px' }}>
                 <div className="container">
                   <motion.div variants={childVariants}>
-                    <h1 className="title glitch-title" data-text="Engineering Folio" style={{ marginBottom: 0 }}>Engineering Folio</h1>
+                    <h1 className="title glitch-title" data-text="Digital Architect" style={{ marginBottom: 0 }}>Digital Architect</h1>
                   </motion.div>
                   <motion.div variants={childVariants}>
                     <p className="subtitle" style={{ marginBottom: 'var(--space-3)' }}>
@@ -225,25 +224,7 @@ export default function Home() {
                     </p>
                   </motion.div>
 
-                  {/* Stat Counters */}
-                  <motion.div variants={childVariants} className="stats-row">
-                    <div className="stat-item">
-                      <div className="stat-value"><AnimatedCounter value={4} suffix="+" /></div>
-                      <div className="stat-label">Projects</div>
-                    </div>
-                    <div className="stat-item">
-                      <div className="stat-value"><AnimatedCounter value={500} suffix="+" /></div>
-                      <div className="stat-label">Connections</div>
-                    </div>
-                    <div className="stat-item">
-                      <div className="stat-value"><AnimatedCounter value={94.16} suffix="%" decimals={2} /></div>
-                      <div className="stat-label">Model Accuracy</div>
-                    </div>
-                    <div className="stat-item">
-                      <div className="stat-value"><AnimatedCounter value={6} /></div>
-                      <div className="stat-label">Certifications</div>
-                    </div>
-                  </motion.div>
+
                   
                   <motion.div variants={childVariants} className="grid-2" style={{ borderTop: '1px solid rgba(0,0,0,0.1)', padding: 'var(--space-4) 0', textAlign: 'left', gap: 'var(--space-6)', marginTop: 'var(--space-4)' }}>
                     <div>
