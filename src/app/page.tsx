@@ -165,9 +165,7 @@ export default function Home() {
     >
 
 
-      {/* HUD Elements */}
-      <div className="hud-element hud-top-right">SYS_STATE: ONLINE // 13ms</div>
-      <div className="hud-element hud-bottom-left">LAT: 16.5062 / LON: 80.6480</div>
+
       
       {/* Floating Edge Navigation */}
       <motion.button 

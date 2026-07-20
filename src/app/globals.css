@@ -712,27 +712,7 @@ a {
    HUD & DECORATIVE ELEMENTS
    ======================================== */
 
-.hud-element {
-  position: fixed;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 5;
-}
 
-.hud-top-right {
-  top: var(--space-4);
-  right: var(--space-4);
-}
-
-.hud-bottom-left {
-  bottom: var(--space-4);
-  left: var(--space-4);
-}
 
 /* Decorative brackets for the main container in hero */
 .hero-brackets {
@@ -768,8 +748,4 @@ a {
 }
 
 
-@media (max-width: 600px) {
-  .hud-element {
-    display: none;
-  }
-}
+
