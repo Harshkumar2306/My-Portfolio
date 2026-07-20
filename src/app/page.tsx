@@ -518,7 +518,7 @@ export default function Home() {
              <FaEnvelope size={18} /> GMAIL
            </a>
         </div>
-        <div className="label" style={{ opacity: 0.5 }}>© 2025</div>
+        <div className="label" style={{ opacity: 0.5 }}>HK</div>
       </footer>
     </main>
   );
