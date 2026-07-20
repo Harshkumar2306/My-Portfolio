@@ -255,7 +255,7 @@ export default function Home() {
           {currentSection === 1 && (
             <motion.div key="sec1" variants={slideVariants} initial="initial" animate="enter" exit="exit" className="slide-content">
               <div className="section-number">02</div>
-              <section className="section" style={{ paddingTop: '20px' }}>
+              <section className="section" style={{ paddingTop: 'clamp(30px, 5vh, 60px)' }}>
                 <div className="container project-scroll-area" style={{ paddingBottom: 'var(--space-8)' }}>
                   <motion.div variants={childVariants} style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
                     <h2 className="title section-title glitch-title" data-text="PROJECT ARCHIVES" style={{ marginBottom: 0 }}>PROJECT ARCHIVES</h2>
