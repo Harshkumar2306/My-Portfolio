@@ -145,6 +145,7 @@ export default function Home() {
 
   const projects = [
     { title: "HarshPay", tech: ["Flutter", "Next.js", "WebRTC"], desc: "Offline-first P2P payment ecosystem with zero-trust match-and-settle escrow engine.", id: "harshpay", status: "Production", github: "https://github.com/Harshkumar2306/Harsh-Pay-App", live: "https://harsh-bank.vercel.app/" },
+    { title: "ATC Simulator", tech: ["MERN", "WebSocket", "Canvas"], desc: "Real-time ATC simulation with 20Hz backend physics and decoupled 60Hz frontend.", id: "atc-simulator", status: "Production", github: "https://github.com/Harshkumar2306/atc-simulator", live: "https://atc-simulator.vercel.app/" },
     { title: "TalkToMe", tech: ["MERN", "Socket.io", "WebRTC"], desc: "Real-time communication platform supporting 500+ connections via WebRTC Mesh.", id: "talktome", status: "Production", github: "https://github.com/Harshkumar2306/talk-to-me", live: "https://talk-to-me-pied.vercel.app/" },
     { title: "Sea Animal Classifier", tech: ["PyTorch", "FastAPI", "React"], desc: "PyTorch classification model achieving 94.16% accuracy across 23 marine species.", id: "sea-animal-classifier", status: "Research Architecture", github: "https://github.com/Harshkumar2306/Sea-Animal-Classifier", live: "https://sea-animal-classifier.vercel.app/" },
     { title: "SmartAgro", tech: ["React", "FastAPI", "Scikit-Learn"], desc: "Precision agriculture via Unsupervised K-Means clustering on multi-spectral indices.", id: "smartagro", status: "Production", github: "https://github.com/Harshkumar2306/SmartAgro", live: "https://smart-agro-eight.vercel.app/" }
@@ -155,7 +156,8 @@ export default function Home() {
   const tilt1 = useMagneticTilt();
   const tilt2 = useMagneticTilt();
   const tilt3 = useMagneticTilt();
-  const tilts = [tilt0, tilt1, tilt2, tilt3];
+  const tilt4 = useMagneticTilt();
+  const tilts = [tilt0, tilt1, tilt2, tilt3, tilt4];
 
   return (
     <main
