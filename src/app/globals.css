@@ -14,22 +14,32 @@
   --font-main: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
-  /* Spacing */
+  /* Fluid Spacing — scales with viewport */
   --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-6: 48px;
-  --space-8: 64px;
-  --space-12: 96px;
-  --space-16: 128px;
+  --space-2: clamp(12px, 2vw, 16px);
+  --space-3: clamp(16px, 3vw, 24px);
+  --space-4: clamp(20px, 4vw, 32px);
+  --space-6: clamp(28px, 5vw, 48px);
+  --space-8: clamp(36px, 6vw, 64px);
+  --space-12: clamp(40px, 8vw, 96px);
+  --space-16: clamp(48px, 10vw, 128px);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none !important;
+}
+
+/* Hide default cursor on desktop only — mobile override below */
+@media (hover: hover) and (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+html {
+  /* Fix 100vh on mobile: use dvh where supported */
+  height: 100%;
+  height: 100dvh;
 }
 
 body {
@@ -38,7 +48,9 @@ body {
   font-family: var(--font-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100%;
+  height: 100dvh;
 }
 
 a {
@@ -88,39 +100,35 @@ a {
   100% { background-position: 200% 0; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
-
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(230, 221, 252, 0); }
   50% { box-shadow: 0 0 20px 4px rgba(230, 221, 252, 0.3); }
 }
 
 /* ========================================
-   TYPOGRAPHY
+   TYPOGRAPHY — Fully Fluid
    ======================================== */
 
 .title {
-  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-size: clamp(1.4rem, 3.5vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: var(--space-2);
+  word-break: break-word;
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.8rem, 2vw, 1.125rem);
   font-weight: 400;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
 
 .label {
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 1.2vw, 0.75rem);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--text-main);
 }
 
@@ -130,7 +138,7 @@ a {
 
 .body-text {
   color: rgba(26, 26, 26, 0.75);
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
   line-height: 1.6;
 }
 
@@ -177,13 +185,14 @@ a {
 
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 var(--space-4);
   position: relative;
 }
 
 .section {
-  padding: var(--space-12) 0;
+  padding: var(--space-6) 0;
   position: relative;
 }
 
@@ -193,8 +202,8 @@ a {
 
 .progress-bar {
   display: flex;
-  gap: 4px;
-  padding: 0 var(--space-4);
+  gap: 3px;
+  padding: 0 var(--space-3);
   flex-shrink: 0;
 }
 
@@ -224,58 +233,18 @@ a {
 }
 
 /* ========================================
-   STAT COUNTER ROW
-   ======================================== */
-
-.stats-row {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-6);
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid rgba(0,0,0,0.06);
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-value {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  font-family: var(--font-mono);
-  line-height: 1;
-  margin-bottom: 4px;
-  background: linear-gradient(90deg, var(--text-main) 0%, var(--text-muted) 50%, var(--text-main) 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s linear infinite;
-}
-
-.stat-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--text-muted);
-}
-
-/* ========================================
    AWARD CARD SYSTEM
    ======================================== */
 
 .award-card-container {
   position: relative;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .award-card-offset {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: clamp(6px, 1.5vw, 16px);
+  left: clamp(6px, 1.5vw, 16px);
   width: 100%;
   height: 100%;
   background-color: var(--bg-offset);
@@ -286,7 +255,7 @@ a {
   position: relative;
   background-color: var(--bg-card);
   border: 1px solid rgba(0,0,0,0.05);
-  padding: var(--space-4);
+  padding: var(--space-3);
   z-index: 2;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
@@ -304,19 +273,19 @@ a {
 }
 
 /* ========================================
-   CSS GRID SYSTEMS
+   CSS GRID SYSTEMS — Adaptive
    ======================================== */
 
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 /* ========================================
@@ -326,16 +295,16 @@ a {
 .submit-btn {
   background-color: var(--accent);
   color: #1A1A1A;
-  padding: 12px 24px;
-  font-size: 0.75rem;
+  padding: clamp(8px, 1.5vw, 12px) clamp(14px, 3vw, 24px);
+  font-size: clamp(0.6rem, 1.2vw, 0.75rem);
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   border: none;
-  cursor: none !important;
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+  white-space: nowrap;
 }
 
 .submit-btn:hover {
@@ -358,30 +327,32 @@ a {
 }
 
 /* ========================================
-   NAVBAR
+   NAVBAR — Always horizontal, never collapses
    ======================================== */
 
 .navbar {
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-1) var(--space-3);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 50;
   position: relative;
   flex-shrink: 0;
+  min-height: 48px;
 }
 
 .logo-text {
   font-weight: 800;
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 2vw, 1.2rem);
   letter-spacing: -0.05em;
   white-space: nowrap;
 }
 
 .nav-actions {
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-1);
   align-items: center;
+  flex-shrink: 0;
 }
 
 /* ========================================
@@ -393,8 +364,8 @@ a {
   top: 50%;
   transform: translateY(-50%);
   z-index: 100;
-  width: 48px;
-  height: 48px;
+  width: clamp(36px, 5vw, 56px);
+  height: clamp(36px, 5vw, 56px);
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,0.1);
   background-color: rgba(245, 243, 236, 0.9);
@@ -403,7 +374,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: none !important;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   color: #1A1A1A;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -413,15 +383,15 @@ a {
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
-.nav-btn-prev { left: var(--space-2); }
-.nav-btn-next { right: var(--space-2); }
+.nav-btn-prev { left: var(--space-1); }
+.nav-btn-next { right: var(--space-1); }
 
 /* ========================================
-   FOOTER
+   FOOTER — Always inline, never stacks weirdly
    ======================================== */
 
 .footer-layout {
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-1) var(--space-3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -430,24 +400,26 @@ a {
   position: relative;
   background-color: var(--bg-color);
   flex-shrink: 0;
+  min-height: 40px;
+  gap: var(--space-1);
 }
 
 .footer-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  gap: var(--space-4);
+  gap: clamp(12px, 3vw, 32px);
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-clock {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: clamp(0.55rem, 1.2vw, 0.7rem);
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ========================================
@@ -465,7 +437,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 var(--space-2);
+  padding: 0 var(--space-1);
+  -webkit-overflow-scrolling: touch;
 }
 
 .slide-content > .section {
@@ -485,9 +458,10 @@ a {
 }
 
 .project-scroll-area {
-  max-height: 70vh;
+  max-height: calc(100dvh - 160px);
   overflow-y: auto;
-  padding-right: var(--space-2);
+  padding-right: var(--space-1);
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ========================================
@@ -499,13 +473,15 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: var(--space-2);
-  gap: var(--space-2);
+  gap: var(--space-1);
+  flex-wrap: wrap;
 }
 
 .project-card-actions {
   display: flex;
   gap: var(--space-1);
   flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .project-card-footer {
@@ -513,13 +489,15 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
 .project-card-tech {
   display: flex;
-  gap: var(--space-1);
+  gap: 6px;
   flex-wrap: wrap;
   flex: 1;
+  min-width: 0;
 }
 
 /* ========================================
@@ -529,19 +507,20 @@ a {
 .contact-links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-weight: 600;
   border: 1px solid rgba(0,0,0,0.1);
-  padding: 8px 16px;
+  padding: clamp(5px, 1vw, 8px) clamp(10px, 2vw, 16px);
   border-radius: 30px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  font-size: clamp(0.75rem, 1.6vw, 0.95rem);
 }
 
 .contact-link:hover {
@@ -559,165 +538,76 @@ a {
   right: var(--space-4);
   transform: translateY(-50%);
   font-family: var(--font-mono);
-  font-size: 8rem;
+  font-size: clamp(4rem, 12vw, 12rem);
   font-weight: 800;
   color: rgba(0,0,0,0.03);
   pointer-events: none;
   z-index: 0;
   line-height: 1;
+  user-select: none;
 }
 
 /* ========================================
-   DESKTOP (min-width: 769px)
+   ADAPTIVE BREAKPOINTS
    ======================================== */
 
-@media (min-width: 769px) {
+/* ---- Tablets & Up (≥600px) ---- */
+@media (min-width: 600px) {
   .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ---- Desktop (≥900px) ---- */
+@media (min-width: 900px) {
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
   .navbar {
-    padding: var(--space-4);
+    padding: var(--space-2) var(--space-4);
   }
 
-  .logo-text {
-    font-size: 1.2rem;
-  }
-
-  .nav-btn {
-    width: 56px;
-    height: 56px;
-  }
-
-  .nav-btn-prev { left: var(--space-4); }
-  .nav-btn-next { right: var(--space-4); }
+  .nav-btn-prev { left: var(--space-3); }
+  .nav-btn-next { right: var(--space-3); }
 
   .slide-content {
     padding: 0;
   }
-
-  .section-number {
-    font-size: 12rem;
-  }
 }
 
-/* ========================================
-   TABLET (769px - 1024px)
-   ======================================== */
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    padding: 0 var(--space-3);
-  }
-  
-  .footer-center {
-    gap: var(--space-3);
-  }
-}
-
-/* ========================================
-   MOBILE (max-width: 768px)
-   ======================================== */
-
-@media (max-width: 768px) {
-  * {
-    cursor: auto !important;
-  }
-
-  .title {
-    font-size: 1.6rem !important;
-  }
-  
-  .subtitle {
-    font-size: 0.9rem;
-  }
-
-  .body-text {
-    font-size: 0.88rem;
-  }
-  
-  .section {
-    padding: var(--space-4) 0;
-  }
-
-  .container {
-    padding: 0 var(--space-2);
-  }
-
-  /* Navbar */
+/* ---- Large Desktop (≥1200px) ---- */
+@media (min-width: 1200px) {
   .navbar {
-    padding: var(--space-1) var(--space-2);
-  }
-  
-  .logo-text {
-    font-size: 0.9rem;
-  }
-  
-  .nav-actions {
-    gap: var(--space-1);
-  }
-  
-  .submit-btn {
-    padding: 8px 14px;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
+    padding: var(--space-4);
   }
 
-  /* Nav buttons: smaller and at bottom */
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    top: auto;
-    bottom: 80px;
-    transform: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  .nav-btn-prev { left: var(--space-2); }
-  .nav-btn-next { right: var(--space-2); }
+  .nav-btn-prev { left: var(--space-4); }
+  .nav-btn-next { right: var(--space-4); }
+}
 
-  /* Footer stacks vertically */
-  .footer-layout {
-    flex-direction: column;
-    gap: var(--space-2);
-    text-align: center;
-    padding: var(--space-2) var(--space-2);
-  }
-  .footer-center {
-    position: relative;
-    left: auto;
-    transform: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-3);
-  }
-
-  /* Grids single column */
-  .grid-2 {
-    grid-template-columns: 1fr !important;
-    gap: var(--space-3) !important;
-  }
-  .grid-3 {
-    grid-template-columns: 1fr !important;
-    gap: var(--space-3) !important;
-  }
-
-  /* Slides: scroll from top */
+/* ---- Small screens: scroll mode (≤599px) ---- */
+@media (max-width: 599px) {
   .slide-content {
     justify-content: flex-start;
-    padding-top: var(--space-2);
-    padding-bottom: 140px;
+    padding-top: var(--space-1);
+    padding-bottom: 100px;
   }
 
   .slide-content > .section {
     margin-top: 0;
     margin-bottom: 0;
   }
-  
+
   .slide-content-hero {
     margin-top: 0 !important;
   }
 
   .slide-content-contact {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
 
   .project-scroll-area {
@@ -726,50 +616,29 @@ a {
     padding-right: 0;
   }
 
-  /* Award card offset: tighter on mobile */
-  .award-card-offset {
-    top: 8px;
-    left: 8px;
+  .section {
+    padding: var(--space-3) 0;
   }
 
-  .award-card {
-    padding: var(--space-3);
+  /* Move nav buttons to bottom on phones */
+  .nav-btn {
+    top: auto;
+    bottom: 55px;
+    transform: none;
   }
 
-  /* Project card header stacks on small screens */
-  .project-card-header {
-    flex-direction: column;
-    gap: var(--space-1);
+  /* Footer: compact inline */
+  .footer-layout {
+    padding: var(--space-1);
+    gap: 4px;
+    min-height: 36px;
   }
-
-  .project-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
+  .footer-center {
+    position: static;
+    transform: none;
     gap: var(--space-2);
   }
 
-  /* Contact links */
-  .contact-link {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-  }
-
-  /* Stats row */
-  .stats-row {
-    gap: var(--space-3);
-    flex-wrap: wrap;
-  }
-
-  .stat-value {
-    font-size: 1.4rem;
-  }
-
-  /* Progress bar */
-  .progress-bar {
-    padding: 0 var(--space-2);
-  }
-
-  /* Section number */
   .section-number {
     display: none;
   }
@@ -780,65 +649,51 @@ a {
   }
 }
 
-/* ========================================
-   VERY SMALL PHONES (max-width: 380px)
-   ======================================== */
-
+/* ---- Very small phones (≤380px) ---- */
 @media (max-width: 380px) {
-  .title {
-    font-size: 1.4rem !important;
-  }
-
-  .logo-text {
-    font-size: 0.8rem;
-  }
-
-  .submit-btn {
-    padding: 6px 10px;
-    font-size: 0.6rem;
+  .footer-layout {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-btn {
-    width: 36px;
-    height: 36px;
-    bottom: 70px;
-  }
-
-  .footer-center {
-    gap: var(--space-2);
-  }
-  
-  .label {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-  }
-
-  .body-text {
-    font-size: 0.82rem;
-  }
-
-  .contact-link {
-    padding: 5px 10px;
-    font-size: 0.8rem;
-  }
-
-  .stat-value {
-    font-size: 1.2rem;
-  }
-
-  .stats-row {
-    gap: var(--space-2);
+    width: 34px;
+    height: 34px;
+    bottom: 48px;
   }
 }
 
-@media (min-width: 769px) {
+/* ---- Short viewports (landscape phones, small laptops) ---- */
+@media (max-height: 600px) {
+  .section {
+    padding: var(--space-2) 0;
+  }
+
+  .slide-content {
+    justify-content: flex-start;
+    padding-top: var(--space-1);
+  }
+
+  .slide-content > .section {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .project-scroll-area {
+    max-height: calc(100dvh - 120px);
+  }
+}
+
+/* ---- Contact container nudge on tall desktops ---- */
+@media (min-width: 900px) and (min-height: 700px) {
   .contact-container {
-    margin-top: -60px;
+    margin-top: -40px;
   }
 }
 
-@media (min-width: 769px) {
+/* ---- Architecture container nudge on tall desktops ---- */
+@media (min-width: 900px) and (min-height: 700px) {
   .architecture-container {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }

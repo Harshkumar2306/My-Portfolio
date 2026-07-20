@@ -159,7 +159,7 @@ export default function Home() {
 
   return (
     <main
-      style={{ overflow: 'hidden', height: '100vh', display: 'flex', flexDirection: 'column' }}
+      style={{ overflow: 'hidden', height: '100dvh', display: 'flex', flexDirection: 'column' }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -226,10 +226,10 @@ export default function Home() {
 
 
                   
-                  <motion.div variants={childVariants} className="grid-2" style={{ borderTop: '1px solid rgba(0,0,0,0.1)', padding: 'var(--space-4) 0', textAlign: 'left', gap: 'var(--space-6)', marginTop: 'var(--space-4)' }}>
+                  <motion.div variants={childVariants} className="grid-2" style={{ borderTop: '1px solid rgba(0,0,0,0.1)', padding: 'var(--space-3) 0', textAlign: 'left', gap: 'var(--space-4)' }}>
                     <div>
                       <span className="label label-muted">01 — ORIGIN</span>
-                      <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginTop: 'var(--space-1)', marginBottom: 'var(--space-2)' }}>Why I engineer?</h3>
+                      <h3 style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', fontWeight: 800, marginTop: 'var(--space-1)', marginBottom: 'var(--space-1)' }}>Why I engineer?</h3>
                       <div className="body-text" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                         <p>I was that kid who didn&apos;t just use software—I broke it, reverse-engineered it, and rebuilt it to run offline.</p>
                         <p>I quickly realized the world&apos;s hardest problems aren&apos;t solved by standard frameworks. They&apos;re solved by architecting resilient systems and training models that see what we can&apos;t. I exist to be one of those people.</p>
@@ -238,7 +238,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="label label-muted">02 — THE WORK</span>
-                      <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginTop: 'var(--space-1)', marginBottom: 'var(--space-2)' }}>What do I actually build?</h3>
+                      <h3 style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', fontWeight: 800, marginTop: 'var(--space-1)', marginBottom: 'var(--space-1)' }}>What do I actually build?</h3>
                       <div className="body-text" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                         <p>Honestly? The hard stuff. And that&apos;s exactly how I like it.</p>
                         <p>Whether it&apos;s training 50-million parameter PyTorch models to classify marine life, engineering zero-trust offline payment escrows, or deploying decentralized real-time meshes capable of supporting hundreds of concurrent nodes.</p>
@@ -367,10 +367,10 @@ export default function Home() {
                  <div className="container">
                    <div className="grid-3" style={{ alignItems: 'stretch' }}>
                      <motion.div variants={cardVariants}>
-                       <p className="label label-muted" style={{ marginBottom: 'var(--space-4)' }}>INDUSTRY EXPERIENCE</p>
-                       <div className="award-card-container" style={{ height: 'calc(100% - 40px)' }}>
+                       <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>INDUSTRY EXPERIENCE</p>
+                       <div className="award-card-container">
                           <div className="award-card-offset"></div>
-                          <motion.div className="award-card" style={{ height: '100%' }} whileHover={{ x: 4, y: 4 }}>
+                          <motion.div className="award-card" whileHover={{ x: 4, y: 4 }}>
                             <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}>EduBot Technologies</h3>
                             <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>GenAI & Prompt Eng. Intern | 2025</p>
                             <p className="body-text" style={{ fontSize: '0.85rem' }}>Spearheaded the AutoPrompt Builder utilizing Python and Cohere APIs. Accelerated prompt iteration speed by 2x via multi-step chaining and automated evaluation metrics.</p>
@@ -378,10 +378,10 @@ export default function Home() {
                        </div>
                      </motion.div>
                      <motion.div variants={cardVariants}>
-                       <p className="label label-muted" style={{ marginBottom: 'var(--space-4)' }}>ACADEMICS</p>
-                       <div className="award-card-container" style={{ height: 'calc(100% - 40px)' }}>
+                       <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>ACADEMICS</p>
+                       <div className="award-card-container">
                           <div className="award-card-offset"></div>
-                          <motion.div className="award-card" style={{ height: '100%' }} whileHover={{ x: 4, y: 4 }}>
+                          <motion.div className="award-card" whileHover={{ x: 4, y: 4 }}>
                             <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}>SRM University AP</h3>
                             <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>B.Tech in CSE (AI/ML) | 2023 - 2027</p>
                             <a href="https://www.google.com/maps/place/SRM+University,+AP" target="_blank" style={{ display: 'block', position: 'relative', width: '100%', height: '160px', marginTop: 'var(--space-2)', cursor: 'none', backgroundColor: 'transparent' }}>
@@ -391,10 +391,10 @@ export default function Home() {
                        </div>
                      </motion.div>
                      <motion.div variants={cardVariants}>
-                       <p className="label label-muted" style={{ marginBottom: 'var(--space-4)' }}>CERTIFICATIONS</p>
-                       <div className="award-card-container" style={{ height: 'calc(100% - 40px)' }}>
+                       <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>CERTIFICATIONS</p>
+                       <div className="award-card-container">
                           <div className="award-card-offset"></div>
-                          <motion.div className="award-card" style={{ height: '100%' }} whileHover={{ x: 4, y: 4 }}>
+                          <motion.div className="award-card" whileHover={{ x: 4, y: 4 }}>
                             <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}>Global Badges</h3>
                             <p className="label label-muted" style={{ marginBottom: 'var(--space-2)' }}>Cloud, Systems & AI</p>
                             <ul className="body-text" style={{ fontSize: '0.85rem', paddingLeft: 'var(--space-2)' }}>
