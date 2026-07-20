@@ -44,6 +44,9 @@ html {
 
 body {
   background-color: var(--bg-color);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
   color: var(--text-main);
   font-family: var(--font-main);
   line-height: 1.5;
@@ -702,5 +705,106 @@ a {
 @media (min-width: 900px) and (min-height: 700px) {
   .architecture-container {
     margin-top: 20px;
+  }
+}
+
+/* ========================================
+   HUD & DECORATIVE ELEMENTS
+   ======================================== */
+
+.hud-element {
+  position: fixed;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hud-top-right {
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.hud-bottom-left {
+  bottom: var(--space-4);
+  left: var(--space-4);
+}
+
+/* Decorative brackets for the main container in hero */
+.hero-brackets {
+  position: relative;
+  display: inline-block;
+}
+.hero-brackets::before,
+.hero-brackets::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0,0,0,0.15);
+  transition: all 0.5s ease;
+}
+.hero-brackets::before {
+  top: -10px;
+  left: -20px;
+  border-right: none;
+  border-bottom: none;
+}
+.hero-brackets::after {
+  bottom: -10px;
+  right: -20px;
+  border-left: none;
+  border-top: none;
+}
+.hero-brackets:hover::before {
+  top: -15px; left: -25px;
+}
+.hero-brackets:hover::after {
+  bottom: -15px; right: -25px;
+}
+
+/* ========================================
+   MARQUEE
+   ======================================== */
+.marquee-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #1a1a1a;
+  color: #F5F3EC;
+  padding: 4px 0;
+  z-index: 60;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 20s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.marquee-content span {
+  padding: 0 20px;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .hud-element {
+    display: none;
   }
 }

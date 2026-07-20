@@ -159,10 +159,25 @@ export default function Home() {
 
   return (
     <main
-      style={{ overflow: 'hidden', height: '100dvh', display: 'flex', flexDirection: 'column' }}
+      style={{ overflow: 'hidden', height: '100dvh', display: 'flex', flexDirection: 'column', position: 'relative' }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
+      {/* Marquee Header */}
+      <div className="marquee-container">
+        <div className="marquee-content">
+          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
+          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
+          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
+          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
+          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
+          <span>HARSH KUMAR // ENGINEERING FOLIO // V2.0</span>
+        </div>
+      </div>
+
+      {/* HUD Elements */}
+      <div className="hud-element hud-top-right">SYS_STATE: ONLINE // 13ms</div>
+      <div className="hud-element hud-bottom-left">LAT: 16.5062 / LON: 80.6480</div>
       
       {/* Floating Edge Navigation */}
       <motion.button 
@@ -184,7 +199,7 @@ export default function Home() {
       </motion.button>
 
       {/* Navigation Bar */}
-      <nav className="navbar">
+      <nav className="navbar" style={{ marginTop: '20px' }}>
           <div className="logo" style={{ cursor: 'none', zIndex: 10, position: 'relative', display: 'flex', alignItems: 'center', gap: '8px' }} onClick={() => setCurrentSection(0)}>
             <img src="/me.JPEG" alt="Harsh Kumar" style={{ width: '32px', height: '32px', borderRadius: '6px', objectFit: 'cover', border: '1px solid rgba(0,0,0,0.1)' }} />
             <div className="logo-text">
@@ -215,8 +230,10 @@ export default function Home() {
               <div className="section-number">01</div>
               <section className="section" style={{ textAlign: 'center', paddingTop: '10px', paddingBottom: '0px' }}>
                 <div className="container">
-                  <motion.div variants={childVariants}>
-                    <h1 className="title glitch-title" data-text="Digital Architect" style={{ marginBottom: 0 }}>Digital Architect</h1>
+                  <motion.div variants={childVariants} style={{ display: 'inline-block' }}>
+                    <div className="hero-brackets">
+                      <h1 className="title glitch-title" data-text="Digital Architect" style={{ marginBottom: 0, padding: '0 10px' }}>Digital Architect</h1>
+                    </div>
                   </motion.div>
                   <motion.div variants={childVariants}>
                     <p className="subtitle" style={{ marginBottom: 'var(--space-3)' }}>
