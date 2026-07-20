@@ -460,27 +460,37 @@ export default function Home() {
                        </div>
                      </div>
                      
-                     {/* Contact Form */}
-                     <motion.div variants={cardVariants}>
-                       <div className="award-card-container" style={{ marginBottom: 0 }}>
-                          <div className="award-card-offset" style={{ top: '8px', left: '8px' }}></div>
-                          <div className="award-card" style={{ padding: 'var(--space-4)' }}>
-                            <form onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully! I will get back to you soon.'); (e.target as HTMLFormElement).reset(); }} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                              <div>
-                                <label className="label" style={{ display: 'block', marginBottom: '4px' }}>NAME_</label>
-                                <input type="text" required placeholder="Enter your name" style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem' }} />
-                              </div>
-                              <div>
-                                <label className="label" style={{ display: 'block', marginBottom: '4px' }}>EMAIL_</label>
-                                <input type="email" required placeholder="your.email@example.com" style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem' }} />
-                              </div>
-                              <div>
-                                <label className="label" style={{ display: 'block', marginBottom: '4px' }}>MESSAGE_</label>
-                                <textarea required placeholder="Tell me about your project..." rows={2} style={{ width: '100%', padding: '10px', border: '1px solid rgba(0,0,0,0.1)', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: '0.9rem', resize: 'none' }}></textarea>
-                              </div>
-                              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} type="submit" className="submit-btn" style={{ marginTop: 'var(--space-1)', alignSelf: 'flex-start' }}>SEND_MESSAGE</motion.button>
-                            </form>
-                          </div>
+                     {/* Contact Form Terminal */}
+                     <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
+                       <div className="terminal-container">
+                         <div className="terminal-header">
+                           <div className="terminal-dots">
+                             <span className="dot red"></span>
+                             <span className="dot yellow"></span>
+                             <span className="dot green"></span>
+                           </div>
+                           <div className="terminal-title">guest@harshkumar:~/contact</div>
+                         </div>
+                         <div className="terminal-body">
+                           <p className="terminal-prompt">Establishing secure transmission protocol...</p>
+                           <form onSubmit={(e) => { e.preventDefault(); alert('Transmission Successful. Standby for response.'); (e.target as HTMLFormElement).reset(); }} className="terminal-form">
+                             <div className="terminal-input-group">
+                               <label>NAME</label>
+                               <input type="text" required placeholder="_" className="terminal-input" />
+                             </div>
+                             <div className="terminal-input-group">
+                               <label>EMAIL</label>
+                               <input type="email" required placeholder="_" className="terminal-input" />
+                             </div>
+                             <div className="terminal-input-group">
+                               <label>MESSAGE</label>
+                               <textarea required placeholder="_" rows={3} className="terminal-input"></textarea>
+                             </div>
+                             <motion.button whileHover={{ scale: 1.02, backgroundColor: '#00FF41', color: '#1A1A1A' }} whileTap={{ scale: 0.98 }} type="submit" className="terminal-btn">
+                               [ EXECUTE_SEND ]
+                             </motion.button>
+                           </form>
+                         </div>
                        </div>
                      </motion.div>
                    </motion.div>
