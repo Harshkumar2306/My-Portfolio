@@ -18,7 +18,7 @@ graph LR
   `;
 
   return (
-    <main style={{ paddingBottom: 'var(--space-16)', backgroundColor: 'var(--bg-color)', minHeight: '100vh' }}>
+    <main style={{ paddingBottom: 'var(--space-16)', backgroundColor: 'var(--bg-color)', height: '100dvh', overflowY: 'auto' }}>
       <div className="container" style={{ paddingTop: 'var(--space-8)' }}>
         <Link href="/?section=1" className="label" style={{ display: 'inline-block', marginBottom: 'var(--space-8)' }}>
           ← BACK TO PROJECT ARCHIVES
