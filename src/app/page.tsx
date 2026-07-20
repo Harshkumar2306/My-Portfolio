@@ -460,34 +460,36 @@ export default function Home() {
                        </div>
                      </div>
                      
-                     {/* Contact Form Terminal */}
-                     <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                       <div className="terminal-container">
-                         <div className="terminal-header">
-                           <div className="terminal-dots">
-                             <span className="dot red"></span>
-                             <span className="dot yellow"></span>
-                             <span className="dot green"></span>
-                           </div>
-                           <div className="terminal-title">guest@harshkumar:~/contact</div>
-                         </div>
-                         <div className="terminal-body">
-                           <p className="terminal-prompt">Establishing secure transmission protocol...</p>
-                           <form onSubmit={(e) => { e.preventDefault(); alert('Transmission Successful. Standby for response.'); (e.target as HTMLFormElement).reset(); }} className="terminal-form">
-                             <div className="terminal-input-group">
-                               <label>NAME</label>
-                               <input type="text" required placeholder="_" className="terminal-input" />
+                     {/* Contact Form - Brutalist/Editorial Theme */}
+                     <motion.div variants={cardVariants} whileHover={{ y: -4 }}>
+                       <div className="brutalist-form-container" style={{ 
+                         backgroundColor: 'var(--bg-card)', 
+                         border: '2px solid var(--text-main)', 
+                         padding: 'var(--space-4)',
+                         position: 'relative'
+                       }}>
+                         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', backgroundImage: 'radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px)', backgroundSize: '10px 10px', opacity: 0.5 }}></div>
+                         <div style={{ position: 'relative', zIndex: 2 }}>
+                           <form onSubmit={(e) => { e.preventDefault(); alert('Message sent successfully! I will get back to you soon.'); (e.target as HTMLFormElement).reset(); }} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                             <div className="brutalist-input-group">
+                               <label className="label" style={{ display: 'block', marginBottom: '8px', fontWeight: 800 }}>[ NAME ]</label>
+                               <input type="text" required placeholder="Enter your name" className="brutalist-input" />
                              </div>
-                             <div className="terminal-input-group">
-                               <label>EMAIL</label>
-                               <input type="email" required placeholder="_" className="terminal-input" />
+                             <div className="brutalist-input-group">
+                               <label className="label" style={{ display: 'block', marginBottom: '8px', fontWeight: 800 }}>[ EMAIL ]</label>
+                               <input type="email" required placeholder="your.email@example.com" className="brutalist-input" />
                              </div>
-                             <div className="terminal-input-group">
-                               <label>MESSAGE</label>
-                               <textarea required placeholder="_" rows={3} className="terminal-input"></textarea>
+                             <div className="brutalist-input-group">
+                               <label className="label" style={{ display: 'block', marginBottom: '8px', fontWeight: 800 }}>[ MESSAGE ]</label>
+                               <textarea required placeholder="Tell me about your project..." rows={3} className="brutalist-input" style={{ resize: 'none' }}></textarea>
                              </div>
-                             <motion.button whileHover={{ scale: 1.02, backgroundColor: '#00FF41', color: '#1A1A1A' }} whileTap={{ scale: 0.98 }} type="submit" className="terminal-btn">
-                               [ EXECUTE_SEND ]
+                             <motion.button 
+                               whileHover={{ backgroundColor: '#1A1A1A', color: '#F5F3EC', x: 2, y: -2, boxShadow: '4px 4px 0px rgba(0,0,0,0.1)' }} 
+                               whileTap={{ scale: 0.98, x: 0, y: 0, boxShadow: '0px 0px 0px rgba(0,0,0,0.1)' }} 
+                               type="submit" 
+                               className="brutalist-submit-btn"
+                             >
+                               SEND MESSAGE
                              </motion.button>
                            </form>
                          </div>
