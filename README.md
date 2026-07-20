@@ -7,9 +7,9 @@
 </p>
 
 <p align="center">
-  <a href="https://vercel.com/new/clone?repository-url=https://github.com/Harshkumar2306/My-Portfolio">
-    <img src="https://vercel.com/button" alt="Deploy with Vercel" />
-  </a>
+  <a href="https://github.com/Harshkumar2306/My-Portfolio/stargazers"><img src="https://img.shields.io/github/stars/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="Stars" /></a>
+  <a href="https://github.com/Harshkumar2306/My-Portfolio/network/members"><img src="https://img.shields.io/github/forks/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="Forks" /></a>
+  <a href="https://github.com/Harshkumar2306/My-Portfolio/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Harshkumar2306/My-Portfolio?style=for-the-badge&color=F5F3EC&labelColor=1A1A1A" alt="License" /></a>
 </p>
 
 <p align="center">
