@@ -1,33 +1,63 @@
-# 🚀 Harsh Kumar | Engineering Folio
+<div align="center">
+  
+# 📐 HARSH KUMAR // DIGITAL ARCHITECT
 
-An ultra-premium, brutalist-inspired interactive developer portfolio built with Next.js and Framer Motion. Designed to break away from standard scrolling websites, this portfolio utilizes a horizontal full-screen slider architecture, providing a highly engaging, presentation-like experience across all devices.
+**An ultra-premium, brutalist-inspired interactive developer portfolio.**
 
-Built using **Next.js 14, React, Framer Motion, Vanilla CSS, and TypeScript**.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Harshkumar2306/My-Portfolio)
+<br/>
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-## 🌟 Live Demo
-🌐 **Live Portfolio:** ([harsh-kumar-blush.vercel.app](https://harsh-kumar-blush.vercel.app/))
+[**View Live Demo**](https://harsh-kumar-blush.vercel.app/) • [**Report Bug**](https://github.com/Harshkumar2306/My-Portfolio/issues) • [**Request Feature**](https://github.com/Harshkumar2306/My-Portfolio/issues)
 
-## 🌟 Features & Architecture
+</div>
 
-### 1. Horizontal Slider Architecture
+---
+
+## ✦ The Vision
+
+Designed to break away from the standard, infinite-scrolling website structure. This portfolio utilizes a **fixed-height horizontal slider architecture**, providing a highly engaging, presentation-like experience across all devices. It is built to feel like an interactive editorial magazine rather than a traditional web page.
+
+## ✦ Key Features
+
+### 🖥️ Horizontal Slider Architecture
 - **Presentation-Style Navigation:** Replaces vertical scrolling with a fixed-height, horizontal sliding interface powered by Framer Motion.
 - **Keyboard & Click Support:** Navigate seamlessly using `ArrowLeft` / `ArrowRight` keys, or the floating chevron buttons.
 - **Deep Linking:** Supports query parameters (e.g., `?section=2`) to link directly to specific slides.
 
-### 2. Editorial & Brutalist UI/UX
-- **Custom Design System:** Built without Tailwind; uses a highly optimized vanilla CSS variables architecture (`globals.css`) for maximum control.
-- **Glassmorphism & Micro-animations:** Fluid hover states on all interactive elements, dynamic map rendering, and smooth page transitions.
+### 🏛️ Editorial & Brutalist UI/UX
+- **Custom Design System:** Built *without* Tailwind. Relies on a highly optimized vanilla CSS variables architecture (`globals.css`) for maximum granular control.
+- **Micro-interactions:** Fluid hover states on all interactive elements, dynamic map rendering, and smooth, staggered page transitions.
 - **Strict Grid Alignments:** Perfect, mathematical grid alignments and sharp `0px` border-radius components for a premium, technical aesthetic.
+- **Glitch & CRT Effects:** Futuristic text treatments and subtle grid backgrounds to reinforce the "Digital Architect" theme.
 
-### 3. Advanced Responsive Engine
-- **Context-Aware Scaling:** Dynamically switches from a strict "Full-Screen Lock" on desktop to an "Internal Scroll" model on mobile phones.
-- **Fluid Typography:** Uses CSS `clamp()` to perfectly scale massive headers without breaking mobile viewports.
-- **4-Tier Breakpoints:** Custom layouts for Desktop, Tablet, standard Mobile, and compact phones (e.g., iPhone SE).
+### 📱 Advanced Adaptive Engine
+- **Context-Aware Scaling:** Dynamically switches from a strict "Full-Screen Lock" on desktop to an "Internal Scroll" model on mobile phones, utilizing modern `100dvh` constraints.
+- **Fluid Typography & Spacing:** Uses CSS `clamp()` to mathematically scale massive headers and section gaps perfectly to any viewport width.
+- **5-Tier Breakpoints:** Custom responsive behaviors engineered for Ultrawide, Desktop, Tablet, standard Mobile, and compact devices.
 
-## 🛠️ Local Setup & Testing
+---
+
+## ✦ Technology Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Animation:** Framer Motion
+- **Styling:** Vanilla CSS (CSS Variables, Flexbox, CSS Grid)
+- **Icons:** React Icons
+- **Data Visualization:** React Simple Maps
+- **Deployment:** Vercel
+
+---
+
+## ✦ Local Development
 
 ### Prerequisites
 - Node.js 18+
+- Git
 
 ### 1. Clone & Install
 ```bash
@@ -49,34 +79,34 @@ npm run build
 npm start
 ```
 
-## ☁️ Cloud Deployment (Vercel)
+---
 
-This project is highly optimized for deployment on Vercel.
-
-1. Push this repository to GitHub.
-2. Go to **Vercel** → **Add New Project** → Select your repo.
-3. Set the Framework Preset to **Next.js**.
-4. Click **Deploy**. Vercel will automatically detect the settings and deploy your portfolio globally in seconds.
-
-## 📁 Project Structure
+## ✦ Project Architecture
 
 ```text
 My-Portfolio/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx         # Root layout and metadata configuration
-│   │   ├── page.tsx           # Main slider logic, state, and UI components
-│   │   └── globals.css        # Responsive design system & variables
+│   │   ├── layout.tsx            # Root layout and metadata configuration
+│   │   ├── page.tsx              # Main slider logic, state, and UI components
+│   │   └── globals.css           # Core design system & CSS variables
 │   ├── components/
-│   │   ├── IndiaMap.tsx       # Custom SVG map configuration
+│   │   ├── IndiaMap.tsx          # Custom SVG map configuration
 │   │   └── IndiaMapComponent.tsx # Map wrapper and interactivity
-├── public/                    # Static assets (me.JPEG, icon.png)
-├── tsconfig.json              # Strict TypeScript configuration
-└── next.config.mjs            # Next.js bundler settings
+├── public/                       # Static assets
+├── tsconfig.json                 # Strict TypeScript configuration
+└── next.config.mjs               # Next.js bundler settings
 ```
 
-## 🤝 Contributing
-Feel free to fork this repository if you want to use the slider architecture for your own portfolio! If you find bugs or want to add features, open an issue or submit a pull request.
+---
 
-## 📝 License
-This project is licensed under the MIT License.
+## ✦ License & Usage
+
+Feel free to fork this repository if you want to study the horizontal slider architecture for your own projects!
+
+If you find this project helpful or inspiring, please consider leaving a ⭐️ on the repository!
+
+<div align="center">
+  <br>
+  Built with obsession to detail by <b>Harsh Kumar</b>
+</div>
